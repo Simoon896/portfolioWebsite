@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 function Navbar() {
@@ -7,6 +8,7 @@ function Navbar() {
   const [isHovering, setIsHovering] = useState(false);
   const hoverTimeoutRef = useRef(null);
   const oCountRef = useRef(1);
+  const location = useLocation();
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,7 +17,7 @@ function Navbar() {
   useEffect(() => {
     if (isHovering) {
       hoverTimeoutRef.current = setInterval(() => {
-        if (oCountRef.current < 15) {
+        if (oCountRef.current < 12) {
           oCountRef.current += 1;
           setLogoText("sim" + "o".repeat(oCountRef.current) + "n");
         } else {
@@ -33,17 +35,33 @@ function Navbar() {
     };
   }, [isHovering]);
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  // Function to handle scrolling to sections on the homepage
+  const scrollToSection = (id) => {
+    if (location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setIsOpen(false);
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a 
-          href="#home" 
+        <Link 
+          to="/"
           className="navbar-logo"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
           <span className="logo-text">{logoText}<span className="terminal-cursor">_</span></span>
-        </a>
+        </Link>
         <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -51,19 +69,19 @@ function Navbar() {
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <a href="#home" className="nav-link" onClick={() => setIsOpen(false)}>Home</a>
+            <Link to="/" className="nav-link" onClick={() => scrollToSection('home')}>Home</Link>
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>About</a>
+            <Link to="/" className="nav-link" onClick={() => scrollToSection('about')}>About</Link>
           </li>
           <li className="nav-item">
-            <a href="#blog" className="nav-link" onClick={() => setIsOpen(false)}>Blog</a>
+            <Link to="/blog" className="nav-link">Blog</Link>
           </li>
           <li className="nav-item">
-            <a href="#projects" className="nav-link" onClick={() => setIsOpen(false)}>Projects</a>
+            <Link to="/projects" className="nav-link">Projects</Link>
           </li>
           <li className="nav-item">
-            <a href="#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</a>
+            <Link to="/" className="nav-link" onClick={() => scrollToSection('contact')}>Contact</Link>
           </li>
         </ul>
       </div>

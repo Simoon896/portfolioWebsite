@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(10, 14, 23, 0.9);
+  background-color: rgba(0, 0, 0, 0.7);
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -7,8 +7,10 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 255, 65, 0.2);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(138, 180, 248, 0.15);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  padding: 0;
 }
 
 .navbar-container {
@@ -17,27 +19,53 @@
   align-items: center;
   width: 100%;
   max-width: 1200px;
+  margin: 0;
   padding: 0;
 }
 
 .navbar-logo {
-  color: var(--terminal-green);
+  color: var(--accent-color);
   font-size: 1.8rem;
   font-weight: bold;
   text-decoration: none;
   letter-spacing: 1px;
+  margin: 0;
+  padding-left: 50px;
   margin-right: auto;
   transition: all 0.3s ease;
-  padding-left: 24px;
 }
 
 .logo-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
   transition: all 0.3s ease;
+  background: linear-gradient(to right, #ffffff, var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.logo-text::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+  top: -10px;
+  left: -10px;
+  filter: blur(3px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover .logo-text::before {
+  opacity: 1;
 }
 
 .terminal-cursor {
   animation: blink 1s step-end infinite;
+  -webkit-text-fill-color: var(--accent-color);
 }
 
 @keyframes blink {
@@ -50,8 +78,7 @@
   align-items: center;
   list-style: none;
   margin: 0;
-  margin-left: auto;
-  padding-right: 24px;
+  padding-right: 20px;
 }
 
 .nav-item {
@@ -65,15 +92,51 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 0 1.2rem;
   height: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 25px;
+  left: 50%;
+  background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(138, 180, 248, 0.8);
 }
 
 .nav-link:hover {
-  color: var(--terminal-green);
+  color: var(--accent-color);
+}
+
+.nav-link:hover:after {
+  width: 70%;
+}
+
+.nav-link:hover:before {
+  transform: translateX(-50%) scale(1);
 }
 
 .menu-icon {
@@ -81,12 +144,21 @@
 }
 
 @media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 0;
+  }
+  
+  .navbar-logo {
+    padding-left: 15px;
+  }
+
   .menu-icon {
     display: block;
     position: relative;
     width: 30px;
     height: 22px;
     cursor: pointer;
+    margin-right: 10px;
   }
 
   .menu-icon span {
@@ -94,7 +166,7 @@
     position: absolute;
     height: 3px;
     width: 100%;
-    background: var(--terminal-green);
+    background: var(--accent-color);
     border-radius: 3px;
     opacity: 1;
     left: 0;
@@ -133,13 +205,14 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     position: absolute;
     top: 80px;
     left: -100%;
-    opacity: 1;
+    opacity: 0;
     transition: all 0.5s ease;
-    background-color: rgba(10, 14, 23, 0.95);
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
     margin-left: 0;
   }
 
@@ -155,6 +228,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid rgba(138, 180, 248, 0.1);
   }
 
   .nav-link {
@@ -165,5 +239,13 @@
     align-items: center;
     padding: 2rem;
     transition: all 0.3s ease;
+  }
+  
+  .nav-link:after {
+    bottom: 15px;
+  }
+  
+  .nav-link:before {
+    top: 15px;
   }
 } 

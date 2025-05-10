@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/Home.css';
 
 function Home() {
   const [text, setText] = useState('');
-  const fullText = "Security Researcher | Ethical Hacker | CTF Player";
+  const fullText = "Developer | Designer | Space Enthusiast";
   const typingSpeed = 60;
   
   useEffect(() => {
@@ -23,41 +24,25 @@ function Home() {
   return (
     <section id="home" className="home-section">
       <div className="home-content">
-        <div className="terminal-header">
-          <div className="terminal-buttons">
-            <span className="terminal-button"></span>
-            <span className="terminal-button"></span>
-            <span className="terminal-button"></span>
+        <div className="greeting-container">
+          <div className="greeting-header">
+            <div className="constellation">
+              <div className="star star-1"></div>
+              <div className="star star-2"></div>
+              <div className="star star-3"></div>
+            </div>
           </div>
-          <div className="terminal-title">terminal</div>
-        </div>
-        <div className="terminal-body">
-          <div className="terminal-line">
-            <span className="terminal-prompt">$ </span>
-            <span className="terminal-command">whoami</span>
-          </div>
-          <div className="terminal-output terminal-name">simon</div>
-          
-          <div className="terminal-line">
-            <span className="terminal-prompt">$ </span>
-            <span className="terminal-command">cat profile.txt</span>
-          </div>
-          <div className="terminal-output">
+          <div className="greeting-body">
             <h1>Hi, I'm Simon</h1>
             <h2 className="typing-text">{text}<span className="cursor">|</span></h2>
             <p>
-              I explore the depths of cybersecurity, breaking and fixing systems to make the digital world safer.
-              My blog shares insights from my security research and ethical hacking journey.
+              Exploring new frontiers in design and development under the starry night sky. 
+              Join me on a cosmic journey through my creative universe.
             </p>
-          </div>
-          
-          <div className="terminal-line">
-            <span className="terminal-prompt">$ </span>
-            <span className="terminal-command">./get-started</span>
-          </div>
-          <div className="terminal-output cta-buttons">
-            <a href="#blog" className="btn primary">Read My Blog</a>
-            <a href="#projects" className="btn secondary">View Projects</a>
+            <div className="cta-buttons">
+              <Link to="/blog" className="btn btn-primary">Read My Blog</Link>
+              <Link to="/projects" className="btn">View Projects</Link>
+            </div>
           </div>
         </div>
       </div>

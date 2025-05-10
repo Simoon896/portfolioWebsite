@@ -5,64 +5,64 @@ function Projects() {
   const [projects] = useState([
     {
       id: 1,
-      title: "Network Vulnerability Scanner",
-      description: "A Python-based vulnerability scanner that detects common network security issues and provides detailed remediation advice.",
-      tech: ["Python", "Nmap", "CVE Database", "OWASP Standards"],
-      githubLink: "https://github.com/simon/vuln-scanner",
-      demoLink: null,
-      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Vulnerability+Scanner"
+      title: "Cosmic Animation Library",
+      description: "A JavaScript library for creating beautiful space-themed animations and visual effects for modern web applications.",
+      tech: ["JavaScript", "Canvas API", "CSS Animations", "React"],
+      githubLink: "https://github.com/simon/cosmic-animations",
+      demoLink: "https://cosmic-animations.demo",
+      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Cosmic+Animations"
     },
     {
       id: 2,
-      title: "Phishing Detection Extension",
-      description: "Browser extension that uses machine learning to identify potential phishing sites and warn users before they enter credentials.",
-      tech: ["JavaScript", "TensorFlow.js", "Chrome API", "ML Model"],
-      githubLink: "https://github.com/simon/phish-detect",
-      demoLink: "https://chrome-extension.demo/phish-detect",
-      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Phishing+Detection"
+      title: "Interactive Constellation Explorer",
+      description: "A web application that allows users to explore constellations, learn about stars, and create their own custom star patterns.",
+      tech: ["React", "Three.js", "WebGL", "Astronomy API"],
+      githubLink: "https://github.com/simon/constellation-explorer",
+      demoLink: "https://constellation-explorer.demo",
+      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Constellation+Explorer"
     },
     {
       id: 3,
-      title: "Malware Analysis Toolkit",
-      description: "A suite of tools for static and dynamic analysis of potentially malicious executables in an isolated environment.",
-      tech: ["Python", "Docker", "Assembly", "Sandbox API"],
-      githubLink: "https://github.com/simon/malware-analysis",
-      demoLink: null,
-      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Malware+Analysis"
+      title: "Stellar Design System",
+      description: "A comprehensive design system with dark mode components inspired by the night sky, built for designers and developers.",
+      tech: ["Figma", "Storybook", "React", "SCSS"],
+      githubLink: "https://github.com/simon/stellar-design",
+      demoLink: "https://stellar-design.demo",
+      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Stellar+Design"
     },
     {
       id: 4,
-      title: "CTF Challenge Platform",
-      description: "Developed a platform for hosting Capture The Flag challenges with authentication, scoring, and real-time leaderboards.",
-      tech: ["React", "Node.js", "Docker", "WebSockets"],
-      githubLink: "https://github.com/simon/ctf-platform",
-      demoLink: "https://ctf-platform-demo.vercel.app",
-      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=CTF+Platform"
+      title: "Moon Phase Calendar",
+      description: "An elegant application that tracks moon phases, lunar events, and provides a visual calendar with astronomical data.",
+      tech: ["JavaScript", "SVG", "Astronomy API", "PWA"],
+      githubLink: "https://github.com/simon/moon-calendar",
+      demoLink: "https://moon-phase-calendar.demo",
+      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Moon+Calendar"
     },
     {
       id: 5,
-      title: "Password Strength Analyzer",
-      description: "Tool that evaluates password security using entropy calculation, dictionary attack simulation, and common pattern detection.",
-      tech: ["JavaScript", "Crypto API", "NIST Guidelines"],
-      githubLink: "https://github.com/simon/password-analyzer",
-      demoLink: "https://password-strength.demo",
-      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Password+Analyzer"
+      title: "Nebula Portfolio Template",
+      description: "A customizable portfolio website template for designers and developers with stunning space-inspired visual effects.",
+      tech: ["HTML", "CSS", "JavaScript", "GSAP"],
+      githubLink: "https://github.com/simon/nebula-portfolio",
+      demoLink: "https://nebula-portfolio.demo",
+      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Nebula+Portfolio"
     },
     {
       id: 6,
-      title: "Security Headers Auditor",
-      description: "Web tool that analyzes HTTP security headers of websites and provides recommendations for hardening against common attacks.",
-      tech: ["Python", "Flask", "OWASP Guidelines"],
-      githubLink: "https://github.com/simon/headers-audit",
-      demoLink: "https://security-headers-audit.demo",
-      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Headers+Auditor"
+      title: "Starry Night Wallpaper Generator",
+      description: "Web application that generates custom starry night wallpapers with adjustable star density, colors, and cosmic effects.",
+      tech: ["Canvas API", "JavaScript", "Color Theory", "React"],
+      githubLink: "https://github.com/simon/wallpaper-gen",
+      demoLink: "https://starry-wallpaper.demo",
+      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Wallpaper+Generator"
     }
   ]);
 
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
-        <h2 className="section-title">Security Projects</h2>
+        <h2 className="section-title">Creative Projects</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="project-card" key={project.id}>
