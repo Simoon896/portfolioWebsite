@@ -1,0 +1,122 @@
+.moon-container {
+  position: fixed;
+  top: 100px;
+  left: 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.moon {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(145deg, #e6e6fa 0%, #d0d0e1 40%, #d8d8e8 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(214, 214, 245, 0.9), 
+              0 0 80px rgba(214, 214, 245, 0.5),
+              inset 5px -5px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  animation: float-rotate 15s infinite ease-in-out;
+  image-rendering: pixelated;
+}
+
+.moon::after {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.moon-glow {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(225, 225, 255, 0.6) 0%, rgba(225, 225, 255, 0.3) 40%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse-glow 8s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.crater {
+  position: absolute;
+  background: linear-gradient(145deg, rgba(200, 200, 225, 0.8) 0%, rgba(220, 220, 240, 0.9) 100%);
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15),
+              inset -1px -1px 3px rgba(255, 255, 255, 0.5);
+}
+
+.crater-1 {
+  width: 24px;
+  height: 24px;
+  top: 25px;
+  left: 30px;
+}
+
+.crater-2 {
+  width: 18px;
+  height: 18px;
+  top: 70px;
+  left: 25px;
+}
+
+.crater-3 {
+  width: 30px;
+  height: 30px;
+  top: 40px;
+  left: 70px;
+}
+
+.crater-4 {
+  width: 14px;
+  height: 14px;
+  top: 20px;
+  left: 60px;
+}
+
+.crater-5 {
+  width: 22px;
+  height: 22px;
+  top: 80px;
+  left: 65px;
+}
+
+/* Add a subtle rotation to the moon */
+@keyframes float-rotate {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@media (max-width: 768px) {
+  .moon-container {
+    top: 90px;
+    left: 40px;
+  }
+  
+  .moon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .moon-glow {
+    width: 140px;
+    height: 140px;
+    top: -30px;
+    left: -30px;
+  }
+  
+  .crater {
+    transform: scale(0.7);
+  }
+} 

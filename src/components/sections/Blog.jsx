@@ -5,42 +5,42 @@ function Blog() {
   const [blogPosts] = useState([
     {
       id: 1,
-      title: "Understanding XSS Vulnerabilities in Modern Web Applications",
+      title: "Creating Cosmic Animations with CSS and SVG",
       date: "June 15, 2023",
-      excerpt: "Cross-Site Scripting (XSS) remains one of the most common web security vulnerabilities. In this post, I explore how attackers exploit XSS and practical mitigation strategies.",
-      category: "Web Security",
+      excerpt: "Explore techniques for creating stunning space-inspired animations using CSS and SVG to bring celestial movement to your web projects.",
+      category: "Web Design",
       readTime: "6 min read",
-      imageUrl: "https://via.placeholder.com/600x340/1a2332/00ff41?text=XSS+Vulnerabilities",
+      imageUrl: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Cosmic+Animations",
       url: "#blog-post-1"
     },
     {
       id: 2,
-      title: "Investigating Network Intrusions: A CTF Walkthrough",
+      title: "Designing with Starlight: Color Theory for Night Themes",
       date: "May 28, 2023",
-      excerpt: "A detailed walkthrough of a Capture The Flag challenge focused on network forensics and how to identify indicators of compromise in network traffic.",
-      category: "CTF",
+      excerpt: "A deep dive into color theory specifically for dark mode and night sky themed designs, with practical examples and palette suggestions.",
+      category: "Design",
       readTime: "8 min read",
-      imageUrl: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Network+Intrusions",
+      imageUrl: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Color+Theory",
       url: "#blog-post-2"
     },
     {
       id: 3,
-      title: "Building a Security-Focused Home Lab",
+      title: "Setting Up a Creative Digital Workshop",
       date: "April 10, 2023",
-      excerpt: "How I set up my home lab environment for security research, including virtualization, network segmentation, and monitoring tools.",
+      excerpt: "How I set up my creative workspace for digital design, including hardware, software, and inspiration resources for cosmic themes.",
       category: "Tools",
       readTime: "10 min read",
-      imageUrl: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Security+Lab",
+      imageUrl: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Digital+Workshop",
       url: "#blog-post-3"
     },
     {
       id: 4,
-      title: "Reverse Engineering Android Apps for Security Analysis",
+      title: "Interactive Constellation Effects with JavaScript",
       date: "March 5, 2023",
-      excerpt: "A guide to the tools and techniques I use for reverse engineering Android applications to identify security flaws and privacy concerns.",
-      category: "Mobile Security",
+      excerpt: "A guide to creating interactive constellation effects that respond to user input, perfect for engaging space-themed websites.",
+      category: "Development",
       readTime: "12 min read",
-      imageUrl: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Android+Reverse+Engineering",
+      imageUrl: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Interactive+Constellations",
       url: "#blog-post-4"
     }
   ]);
@@ -48,7 +48,7 @@ function Blog() {
   return (
     <section id="blog" className="blog-section">
       <div className="blog-container">
-        <h2 className="section-title">Security Research & Insights</h2>
+        <h2 className="section-title">Creative Insights & Tutorials</h2>
         
         <div className="blog-posts">
           {blogPosts.map(post => (
@@ -77,8 +77,8 @@ function Blog() {
         </div>
 
         <div className="blog-cta">
-          <h3>Interested in Cybersecurity? Let's Connect!</h3>
-          <p>Follow my research or reach out for collaboration opportunities.</p>
+          <h3>Inspired by the Cosmos? Let's Create Together!</h3>
+          <p>Follow my design journey or reach out for collaboration opportunities.</p>
           <a href="#contact" className="btn primary">Contact Me</a>
         </div>
       </div>
