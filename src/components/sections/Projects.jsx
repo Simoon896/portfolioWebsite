@@ -5,9 +5,9 @@ function Projects() {
   const [projects] = useState([
     {
       id: 1,
-      title: "Cosmic Animation Library",
-      description: "A JavaScript library for creating beautiful space-themed animations and visual effects for modern web applications.",
-      tech: ["JavaScript", "Canvas API", "CSS Animations", "React"],
+      title: "Catalogr",
+      description: "A mobile app that allows users to catalog basic home items and information about them.",
+      tech: ["React Native", "Canvas API", "CSS Animations", "React"],
       githubLink: "https://github.com/simon/cosmic-animations",
       demoLink: "https://cosmic-animations.demo",
       image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Cosmic+Animations"

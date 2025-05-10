@@ -43,7 +43,7 @@ function Contact() {
     <section id="contact" className="contact-section">
       <div className="contact-container">
         <h2 className="section-title">Contact Me</h2>
-        <div className="cosmic-line contact-header">
+        <div className="cosmic-line">
           <span className="cosmic-text">establishing connection to the cosmos</span>
         </div>
         
