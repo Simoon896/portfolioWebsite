@@ -2,6 +2,7 @@
   padding: 100px 24px;
   background-color: var(--primary-bg);
   position: relative;
+  z-index: 1;
 }
 
 .contact-container {
@@ -9,26 +10,44 @@
   margin: 0 auto;
 }
 
-.contact-header {
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  color: var(--text-primary);
+  font-family: 'Manrope', sans-serif;
+}
+
+.section-title::after {
+  content: '';
   position: absolute;
-  top: 40px;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent-color), transparent);
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #000;
-  padding: 10px 20px;
+}
+
+.cosmic-line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.cosmic-text {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px 20px;
   border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  border: 1px solid var(--terminal-green);
+  font-family: 'Manrope', sans-serif;
+  border: 1px solid var(--accent-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.contact-header .prompt {
-  color: var(--terminal-green);
-  margin-right: 8px;
-}
-
-.contact-header .command {
-  color: var(--text-primary);
+  color: var(--accent-color);
+  font-size: 0.9rem;
 }
 
 .contact-content {
@@ -39,24 +58,33 @@
 }
 
 .contact-info {
-  background-color: var(--card-bg);
-  border-radius: 8px;
+  background-color: rgba(10, 15, 28, 0.7);
+  border-radius: 16px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 255, 65, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+              0 0 15px rgba(138, 180, 248, 0.1);
+  border: 1px solid rgba(138, 180, 248, 0.2);
+  backdrop-filter: blur(10px);
+  transform: perspective(1000px) rotateX(2deg);
+  transition: transform 0.3s ease;
+}
+
+.contact-info:hover {
+  transform: perspective(1000px) rotateX(0deg);
 }
 
 .contact-item h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: var(--text-primary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .contact-item p {
   margin-bottom: 25px;
   color: var(--text-secondary);
   line-height: 1.6;
+  font-family: 'Manrope', sans-serif;
 }
 
 .contact-details {
@@ -71,13 +99,13 @@
 
 .contact-detail svg {
   margin-right: 15px;
-  color: var(--terminal-green);
+  color: var(--accent-color);
 }
 
 .contact-detail span {
   color: var(--text-secondary);
   font-size: 1rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .social-links {
@@ -92,26 +120,34 @@
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: rgba(0, 255, 65, 0.1);
+  background-color: rgba(138, 180, 248, 0.1);
   border-radius: 50%;
-  color: var(--terminal-green);
+  color: var(--accent-color);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 255, 65, 0.2);
+  border: 1px solid rgba(138, 180, 248, 0.2);
 }
 
 .social-link:hover {
-  background-color: rgba(0, 255, 65, 0.2);
-  color: var(--terminal-green);
+  background-color: rgba(138, 180, 248, 0.2);
+  color: var(--accent-color);
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 255, 65, 0.2);
+  box-shadow: 0 5px 15px rgba(138, 180, 248, 0.2);
 }
 
 .contact-form-container {
-  background-color: var(--card-bg);
-  border-radius: 8px;
+  background-color: rgba(10, 15, 28, 0.7);
+  border-radius: 16px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 255, 65, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+              0 0 15px rgba(138, 180, 248, 0.1);
+  border: 1px solid rgba(138, 180, 248, 0.2);
+  backdrop-filter: blur(10px);
+  transform: perspective(1000px) rotateX(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.contact-form-container:hover {
+  transform: perspective(1000px) rotateX(0deg);
 }
 
 .contact-form {
@@ -129,26 +165,26 @@
   margin-bottom: 8px;
   color: var(--text-primary);
   font-weight: 500;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .form-group input,
 .form-group textarea {
   padding: 12px 16px;
-  border: 1px solid rgba(0, 255, 65, 0.2);
+  border: 1px solid rgba(138, 180, 248, 0.2);
   border-radius: 6px;
   font-size: 1rem;
   transition: all 0.3s ease;
   background-color: rgba(0, 0, 0, 0.2);
   color: var(--text-primary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--terminal-green);
-  box-shadow: 0 0 0 3px rgba(0, 255, 65, 0.2);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.2);
 }
 
 .form-group input::placeholder,
@@ -160,7 +196,7 @@
 .submit-btn {
   margin-top: 10px;
   padding: 14px;
-  background-color: var(--terminal-green);
+  background-color: var(--accent-color);
   color: #000;
   border: none;
   border-radius: 6px;
@@ -168,25 +204,25 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .submit-btn:hover {
   background-color: transparent;
-  color: var(--terminal-green);
-  border: 1px solid var(--terminal-green);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 .submit-btn:disabled {
-  background-color: rgba(0, 255, 65, 0.5);
+  background-color: rgba(138, 180, 248, 0.5);
   cursor: not-allowed;
 }
 
 .form-error {
-  color: var(--danger-color);
+  color: #ff6347;
   margin-top: 10px;
   font-size: 0.9rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .form-success {
@@ -200,7 +236,7 @@
 }
 
 .form-success svg {
-  color: var(--terminal-green);
+  color: var(--accent-color);
   margin-bottom: 20px;
 }
 
@@ -208,12 +244,12 @@
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: var(--text-primary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .form-success p {
   color: var(--text-secondary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 @media screen and (max-width: 992px) {
@@ -245,9 +281,8 @@
     justify-content: space-between;
   }
   
-  .contact-header {
+  .cosmic-text {
     width: 90%;
     font-size: 0.8rem;
-    padding: 8px 15px;
   }
 } 

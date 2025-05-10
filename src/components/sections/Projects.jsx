@@ -7,7 +7,7 @@ function Projects() {
       id: 1,
       title: "Catalogr",
       description: "A mobile app that allows users to catalog basic home items and information about them.",
-      tech: ["JavaScript", "Canvas API", "CSS Animations", "React"],
+      tech: ["React Native", "Canvas API", "CSS Animations", "React"],
       githubLink: "https://github.com/simon/cosmic-animations",
       demoLink: "https://cosmic-animations.demo",
       image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Cosmic+Animations"

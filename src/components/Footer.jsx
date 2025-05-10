@@ -12,7 +12,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-logo">
-            <h3>simoon<span className="cursor">_</span></h3>
+            <h3>simon<span className="cursor">_</span></h3>
             <p>Developer & Designer</p>
           </div>
           
@@ -50,7 +50,7 @@ function Footer() {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Simoon | Developer & Designer | <span className="accent-text">Exploring the digital cosmos</span></p>
+          <p>&copy; {currentYear} Simon | Developer & Designer | <span className="accent-text">Exploring the digital cosmos</span></p>
         </div>
       </div>
     </footer>
