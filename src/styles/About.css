@@ -1,6 +1,6 @@
 .about-section {
   padding: 100px 24px;
-  background-color: #f8f9fa;
+  background-color: var(--primary-bg);
 }
 
 .about-container {
@@ -13,6 +13,8 @@
   text-align: center;
   margin-bottom: 50px;
   position: relative;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .section-title::after {
@@ -20,7 +22,7 @@
   position: absolute;
   width: 70px;
   height: 3px;
-  background-color: #646cff;
+  background-color: var(--terminal-green);
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
@@ -36,27 +38,120 @@
   flex: 1;
 }
 
-.about-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #333;
+/* Terminal styling */
+.terminal-window {
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--terminal-green);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 255, 65, 0.2);
 }
 
-.about-text p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-  color: #555;
-  font-size: 1.1rem;
+.terminal-header {
+  background-color: #2d2d2d;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
 }
 
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.terminal-button:nth-child(1) {
+  background-color: #ff5f56;
+}
+
+.terminal-button:nth-child(2) {
+  background-color: #ffbd2e;
+}
+
+.terminal-button:nth-child(3) {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  margin-left: auto;
+  margin-right: auto;
+  color: #ccc;
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.command-line {
+  margin-bottom: 10px;
+}
+
+.prompt {
+  color: var(--terminal-green);
+  margin-right: 10px;
+}
+
+.command-output {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  padding-left: 15px;
+  line-height: 1.6;
+  border-left: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+.command-output p {
+  margin-bottom: 15px;
+}
+
+.command-output p:last-child {
+  margin-bottom: 0;
+}
+
+.command-output ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.command-output ul li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.command-output ul li::before {
+  content: ">";
+  color: var(--terminal-green);
+  position: absolute;
+  left: 0;
+}
+
+.command-output strong {
+  color: var(--terminal-blue);
+}
+
+/* Skills styling */
 .skills-container {
   flex: 1;
 }
 
 .skills-container h3 {
   font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 25px;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
 }
 
 .skills-grid {
@@ -66,18 +161,20 @@
 }
 
 .skill-group {
-  background-color: white;
+  background-color: var(--card-bg);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 255, 65, 0.1);
 }
 
 .skill-group h4 {
-  color: #646cff;
+  color: var(--terminal-green);
   margin-bottom: 15px;
   font-size: 1.2rem;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid rgba(0, 255, 65, 0.2);
   padding-bottom: 8px;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .skill-group ul {
@@ -89,13 +186,15 @@
   padding: 6px 0;
   position: relative;
   padding-left: 20px;
+  color: var(--text-secondary);
 }
 
 .skill-group li::before {
-  content: '✓';
+  content: '>';
   position: absolute;
   left: 0;
-  color: #646cff;
+  color: var(--terminal-green);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 @media screen and (max-width: 992px) {
@@ -115,10 +214,5 @@
   
   .section-title {
     font-size: 2rem;
-  }
-  
-  .about-text h3,
-  .skills-container h3 {
-    font-size: 1.5rem;
   }
 } 

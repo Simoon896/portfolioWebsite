@@ -1,8 +1,8 @@
 import Layout from './components/Layout';
 import Home from './components/sections/Home';
 import About from './components/sections/About';
+import Blog from './components/sections/Blog';
 import Projects from './components/sections/Projects';
-import Resume from './components/sections/Resume';
 import Contact from './components/sections/Contact';
 import './App.css';
 
@@ -11,8 +11,8 @@ function App() {
     <Layout>
       <Home />
       <About />
+      <Blog />
       <Projects />
-      <Resume />
       <Contact />
     </Layout>
   );

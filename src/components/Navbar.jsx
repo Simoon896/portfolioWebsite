@@ -12,7 +12,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <a href="#home" className="navbar-logo">
-          Simon
+          <span className="logo-text">simon<span className="terminal-cursor">_</span></span>
         </a>
         <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
@@ -25,6 +25,9 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>About</a>
+          </li>
+          <li className="nav-item">
+            <a href="#blog" className="nav-link" onClick={() => setIsOpen(false)}>Blog</a>
           </li>
           <li className="nav-item">
             <a href="#projects" className="nav-link" onClick={() => setIsOpen(false)}>Projects</a>

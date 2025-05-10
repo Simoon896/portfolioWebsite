@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(10, 14, 23, 0.9);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -8,6 +8,7 @@
   top: 0;
   z-index: 999;
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 255, 65, 0.2);
 }
 
 .navbar-container {
@@ -20,11 +21,24 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: var(--terminal-green);
   font-size: 1.8rem;
   font-weight: bold;
   text-decoration: none;
   letter-spacing: 1px;
+}
+
+.logo-text {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .nav-menu {
@@ -42,7 +56,7 @@
 }
 
 .nav-link {
-  color: #fff;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -50,10 +64,11 @@
   height: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .nav-link:hover {
-  color: #646cff;
+  color: var(--terminal-green);
 }
 
 .menu-icon {
@@ -74,7 +89,7 @@
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #fff;
+    background: var(--terminal-green);
     border-radius: 3px;
     opacity: 1;
     left: 0;
@@ -119,7 +134,7 @@
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(10, 14, 23, 0.95);
   }
 
   .nav-menu.active {

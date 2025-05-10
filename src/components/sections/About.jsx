@@ -2,11 +2,11 @@ import '../../styles/About.css';
 
 function About() {
   const skills = [
-    { category: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'] },
-    { category: 'Frontend', items: ['React', 'HTML/CSS', 'Redux', 'Next.js', 'Tailwind CSS'] },
-    { category: 'Backend', items: ['Node.js', 'Express', 'Django', 'Spring Boot'] },
-    { category: 'Database', items: ['MongoDB', 'MySQL', 'PostgreSQL', 'Firebase'] },
-    { category: 'Tools', items: ['Git', 'Docker', 'AWS', 'Figma', 'VS Code'] },
+    { category: 'Offensive Security', items: ['Penetration Testing', 'Web App Security', 'Network Scanning', 'Social Engineering', 'Exploit Development'] },
+    { category: 'Defensive Security', items: ['SIEM Management', 'Incident Response', 'Threat Hunting', 'Malware Analysis', 'Vulnerability Assessment'] },
+    { category: 'Programming', items: ['Python', 'Bash', 'PowerShell', 'JavaScript', 'SQL'] },
+    { category: 'Tools & Platforms', items: ['Kali Linux', 'Wireshark', 'Burp Suite', 'Metasploit', 'Nmap', 'OWASP ZAP'] },
+    { category: 'Certifications', items: ['Security+', 'eJPT (in progress)', 'HTB Certified', 'TryHackMe Top 1%', 'CTF Competitor'] },
   ];
 
   return (
@@ -15,26 +15,63 @@ function About() {
         <h2 className="section-title">About Me</h2>
         <div className="about-content">
           <div className="about-text">
-            <h3>My Background</h3>
-            <p>
-              I'm a Computer Science student passionate about building software that solves real-world problems.
-              My journey in programming began during high school where I discovered my love for turning ideas into
-              working applications.
-            </p>
-            <p>
-              Currently, I'm focused on web development and software engineering, with a particular interest in
-              creating intuitive user interfaces and robust backend systems. I'm constantly learning new technologies
-              and best practices to improve my skills.
-            </p>
-            <h3>Education</h3>
-            <p>
-              Bachelor's Degree in Computer Science<br />
-              Expected Graduation: 2025
-            </p>
+            <div className="terminal-window">
+              <div className="terminal-header">
+                <div className="terminal-buttons">
+                  <span className="terminal-button"></span>
+                  <span className="terminal-button"></span>
+                  <span className="terminal-button"></span>
+                </div>
+                <div className="terminal-title">about.sh</div>
+              </div>
+              <div className="terminal-body">
+                <div className="command-line">
+                  <span className="prompt">simon@kali:~$</span> cat background.txt
+                </div>
+                <div className="command-output">
+                  <p>
+                    I'm a cybersecurity enthusiast focused on ethical hacking, penetration testing, and security research. 
+                    My journey began with a fascination for understanding how systems work—and then figuring out how they can break.
+                  </p>
+                  <p>
+                    Currently pursuing a degree in Cybersecurity, I spend my time participating in CTF competitions, 
+                    researching vulnerabilities, and building tools to enhance security testing capabilities.
+                  </p>
+                </div>
+                
+                <div className="command-line">
+                  <span className="prompt">simon@kali:~$</span> cat interests.txt
+                </div>
+                <div className="command-output">
+                  <ul>
+                    <li>Web application security testing</li>
+                    <li>Network penetration testing</li>
+                    <li>Security automation with Python</li>
+                    <li>Capture The Flag competitions</li>
+                    <li>Malware analysis and reverse engineering</li>
+                  </ul>
+                </div>
+                
+                <div className="command-line">
+                  <span className="prompt">simon@kali:~$</span> cat education.txt
+                </div>
+                <div className="command-output">
+                  <p>
+                    <strong>B.S. in Cybersecurity</strong><br />
+                    Expected Graduation: 2025<br />
+                    Relevant Coursework: Network Security, Ethical Hacking, Digital Forensics, Secure Coding
+                  </p>
+                </div>
+                
+                <div className="command-line">
+                  <span className="prompt">simon@kali:~$</span> _
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="skills-container">
-            <h3>Technical Skills</h3>
+            <h3>Technical Arsenal</h3>
             <div className="skills-grid">
               {skills.map((skillGroup, index) => (
                 <div key={index} className="skill-group">

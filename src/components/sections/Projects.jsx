@@ -5,69 +5,76 @@ function Projects() {
   const [projects] = useState([
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce application with product listings, shopping cart, and user authentication.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      githubLink: "https://github.com/simon/ecommerce-platform",
-      demoLink: "https://ecommerce-demo.vercel.app",
-      image: "https://via.placeholder.com/600x340/3a3a3a/ffffff?text=E-commerce+Platform"
+      title: "Network Vulnerability Scanner",
+      description: "A Python-based vulnerability scanner that detects common network security issues and provides detailed remediation advice.",
+      tech: ["Python", "Nmap", "CVE Database", "OWASP Standards"],
+      githubLink: "https://github.com/simon/vuln-scanner",
+      demoLink: null,
+      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Vulnerability+Scanner"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A kanban-style task management application to organize personal and team projects.",
-      tech: ["React", "Redux", "Firebase"],
-      githubLink: "https://github.com/simon/task-manager",
-      demoLink: "https://task-app-demo.vercel.app",
-      image: "https://via.placeholder.com/600x340/3a3a3a/ffffff?text=Task+Management+App"
+      title: "Phishing Detection Extension",
+      description: "Browser extension that uses machine learning to identify potential phishing sites and warn users before they enter credentials.",
+      tech: ["JavaScript", "TensorFlow.js", "Chrome API", "ML Model"],
+      githubLink: "https://github.com/simon/phish-detect",
+      demoLink: "https://chrome-extension.demo/phish-detect",
+      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Phishing+Detection"
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "A weather application that shows current conditions and forecasts using a third-party API.",
-      tech: ["JavaScript", "HTML/CSS", "OpenWeather API"],
-      githubLink: "https://github.com/simon/weather-app",
-      demoLink: "https://weather-demo.vercel.app",
-      image: "https://via.placeholder.com/600x340/3a3a3a/ffffff?text=Weather+Dashboard"
+      title: "Malware Analysis Toolkit",
+      description: "A suite of tools for static and dynamic analysis of potentially malicious executables in an isolated environment.",
+      tech: ["Python", "Docker", "Assembly", "Sandbox API"],
+      githubLink: "https://github.com/simon/malware-analysis",
+      demoLink: null,
+      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Malware+Analysis"
     },
     {
       id: 4,
-      title: "Social Media Analytics",
-      description: "Data visualization tool for social media metrics and engagement analytics.",
-      tech: ["Python", "Django", "Chart.js", "PostgreSQL"],
-      githubLink: "https://github.com/simon/social-analytics",
-      demoLink: "https://social-analytics-demo.vercel.app",
-      image: "https://via.placeholder.com/600x340/3a3a3a/ffffff?text=Social+Media+Analytics"
+      title: "CTF Challenge Platform",
+      description: "Developed a platform for hosting Capture The Flag challenges with authentication, scoring, and real-time leaderboards.",
+      tech: ["React", "Node.js", "Docker", "WebSockets"],
+      githubLink: "https://github.com/simon/ctf-platform",
+      demoLink: "https://ctf-platform-demo.vercel.app",
+      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=CTF+Platform"
     },
     {
       id: 5,
-      title: "Fitness Tracker",
-      description: "Mobile-first web application for tracking workouts and health metrics.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      githubLink: "https://github.com/simon/fitness-tracker",
-      demoLink: "https://fitness-tracker-demo.vercel.app",
-      image: "https://via.placeholder.com/600x340/3a3a3a/ffffff?text=Fitness+Tracker"
+      title: "Password Strength Analyzer",
+      description: "Tool that evaluates password security using entropy calculation, dictionary attack simulation, and common pattern detection.",
+      tech: ["JavaScript", "Crypto API", "NIST Guidelines"],
+      githubLink: "https://github.com/simon/password-analyzer",
+      demoLink: "https://password-strength.demo",
+      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Password+Analyzer"
     },
     {
       id: 6,
-      title: "Recipe Finder",
-      description: "Application to discover recipes based on available ingredients and dietary preferences.",
-      tech: ["React", "Spoonacular API", "CSS Modules"],
-      githubLink: "https://github.com/simon/recipe-finder",
-      demoLink: "https://recipe-finder-demo.vercel.app",
-      image: "https://via.placeholder.com/600x340/3a3a3a/ffffff?text=Recipe+Finder"
+      title: "Security Headers Auditor",
+      description: "Web tool that analyzes HTTP security headers of websites and provides recommendations for hardening against common attacks.",
+      tech: ["Python", "Flask", "OWASP Guidelines"],
+      githubLink: "https://github.com/simon/headers-audit",
+      demoLink: "https://security-headers-audit.demo",
+      image: "https://via.placeholder.com/600x340/1a2332/00ff41?text=Headers+Auditor"
     }
   ]);
 
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
-        <h2 className="section-title">My Projects</h2>
+        <h2 className="section-title">Security Projects</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div className="project-card" key={project.id}>
               <div className="project-image">
                 <img src={project.image} alt={project.title} />
+                {project.githubLink && (
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link-overlay github">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                )}
               </div>
               <div className="project-content">
                 <h3>{project.title}</h3>
@@ -77,15 +84,25 @@ function Projects() {
                     <span key={index} className="tech-tag">{tech}</span>
                   ))}
                 </div>
+                
                 <div className="project-links">
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link github">
-                    GitHub
-                  </a>
                   {project.demoLink && (
                     <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="project-link demo">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
                       Live Demo
                     </a>
                   )}
+                  <a href={`#project-${project.id}`} className="project-link details">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
