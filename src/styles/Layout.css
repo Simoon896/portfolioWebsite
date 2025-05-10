@@ -4,10 +4,12 @@
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .main-content {
   flex: 1 0 auto;
   position: relative;
   z-index: 1;
+  padding-top: 80px; /* Add padding to account for the navbar height */
 } 
