@@ -2,7 +2,7 @@
   background-color: rgba(10, 14, 23, 0.9);
   height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: sticky;
   top: 0;
@@ -17,7 +17,7 @@
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  padding: 0 24px;
+  padding: 0;
 }
 
 .navbar-logo {
@@ -26,10 +26,14 @@
   font-weight: bold;
   text-decoration: none;
   letter-spacing: 1px;
+  margin-right: auto;
+  transition: all 0.3s ease;
+  padding-left: 24px;
 }
 
 .logo-text {
   font-family: 'JetBrains Mono', monospace;
+  transition: all 0.3s ease;
 }
 
 .terminal-cursor {
@@ -46,7 +50,8 @@
   align-items: center;
   list-style: none;
   margin: 0;
-  padding: 0;
+  margin-left: auto;
+  padding-right: 24px;
 }
 
 .nav-item {
@@ -135,6 +140,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     background-color: rgba(10, 14, 23, 0.95);
+    margin-left: 0;
   }
 
   .nav-menu.active {

@@ -1,18 +1,48 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../styles/Navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [logoText, setLogoText] = useState("simon");
+  const [isHovering, setIsHovering] = useState(false);
+  const hoverTimeoutRef = useRef(null);
+  const oCountRef = useRef(1);
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    if (isHovering) {
+      hoverTimeoutRef.current = setInterval(() => {
+        if (oCountRef.current < 15) {
+          oCountRef.current += 1;
+          setLogoText("sim" + "o".repeat(oCountRef.current) + "n");
+        } else {
+          clearInterval(hoverTimeoutRef.current);
+        }
+      }, 150);
+    } else {
+      clearInterval(hoverTimeoutRef.current);
+      oCountRef.current = 1;
+      setLogoText("simon");
+    }
+
+    return () => {
+      clearInterval(hoverTimeoutRef.current);
+    };
+  }, [isHovering]);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="#home" className="navbar-logo">
-          <span className="logo-text">simon<span className="terminal-cursor">_</span></span>
+        <a 
+          href="#home" 
+          className="navbar-logo"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          <span className="logo-text">{logoText}<span className="terminal-cursor">_</span></span>
         </a>
         <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
