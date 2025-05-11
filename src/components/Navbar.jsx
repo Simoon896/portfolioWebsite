@@ -1,14 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [logoText, setLogoText] = useState("simon");
+  const [logoText, setLogoText] = useState("Simoon");
   const [isHovering, setIsHovering] = useState(false);
   const hoverTimeoutRef = useRef(null);
-  const oCountRef = useRef(1);
+  const oCountRef = useRef(2);
   const location = useLocation();
+  const navigate = useNavigate();
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -19,15 +20,15 @@ function Navbar() {
       hoverTimeoutRef.current = setInterval(() => {
         if (oCountRef.current < 12) {
           oCountRef.current += 1;
-          setLogoText("sim" + "o".repeat(oCountRef.current) + "n");
+          setLogoText("Sim" + "o".repeat(oCountRef.current) + "n");
         } else {
           clearInterval(hoverTimeoutRef.current);
         }
       }, 150);
     } else {
       clearInterval(hoverTimeoutRef.current);
-      oCountRef.current = 1;
-      setLogoText("simon");
+      oCountRef.current = 2;
+      setLogoText("Simoon");
     }
 
     return () => {
@@ -35,33 +36,59 @@ function Navbar() {
     };
   }, [isHovering]);
 
-  // Close menu when route changes
+  // Close menu when route changes and scroll to top
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Function to handle scrolling to sections on the homepage
   const scrollToSection = (id) => {
-    if (location.pathname === '/') {
+    // If we're not on the homepage, navigate there first
+    if (location.pathname !== '/') {
+      navigate('/');
+      
+      // Add a small delay to allow page transition before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If we're already on the homepage, scroll directly
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-      setIsOpen(false);
     }
+    setIsOpen(false);
+  };
+
+  // Function to navigate to page and scroll to top
+  const navigateToPage = (e, path) => {
+    e.preventDefault(); // Prevent default Link behavior
+    window.scrollTo(0, 0); // Scroll to top immediately
+    navigate(path); // Then navigate
+    setIsOpen(false);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link 
-          to="/"
+        <a 
+          href="/"
           className="navbar-logo"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo(0, 0);
+            navigate('/');
+          }}
         >
-          <span className="logo-text">{logoText}<span className="terminal-cursor">_</span></span>
-        </Link>
+          <span className="logo-text">{logoText}</span>
+        </a>
         <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -72,16 +99,16 @@ function Navbar() {
             <Link to="/" className="nav-link" onClick={() => scrollToSection('home')}>Home</Link>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-link" onClick={() => scrollToSection('about')}>About</Link>
+            <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
           </li>
           <li className="nav-item">
-            <Link to="/blog" className="nav-link">Blog</Link>
+            <a href="/blog" className="nav-link" onClick={(e) => navigateToPage(e, '/blog')}>Blog</a>
           </li>
           <li className="nav-item">
-            <Link to="/projects" className="nav-link">Projects</Link>
+            <a href="/projects" className="nav-link" onClick={(e) => navigateToPage(e, '/projects')}>Projects</a>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-link" onClick={() => scrollToSection('contact')}>Contact</Link>
+            <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
           </li>
         </ul>
       </div>
