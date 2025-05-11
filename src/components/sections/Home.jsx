@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import DailyQuote from '../DailyQuote';
 import '../../styles/Home.css';
 
 function Home() {
   const [text, setText] = useState('');
-  const fullText = "Developer | Designer | Space Enthusiast";
+  const fullText = "Developer | Web Designer | Network Specialist";
   const typingSpeed = 60;
   
   useEffect(() => {
@@ -35,13 +36,18 @@ function Home() {
           <div className="greeting-body">
             <h1>Hi, I'm Simon</h1>
             <h2 className="typing-text">{text}<span className="cursor">|</span></h2>
-            <p>
-              Exploring new frontiers in design and development under the starry night sky. 
-              Join me on a cosmic journey through my creative universe.
-            </p>
+            <DailyQuote />
             <div className="cta-buttons">
               <Link to="/blog" className="btn btn-primary">Read My Blog</Link>
               <Link to="/projects" className="btn">View Projects</Link>
+              <Link to="#about" className="btn" onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+              }}>About Me</Link>
+              <Link to="#contact" className="btn" onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+              }}>Contact</Link>
             </div>
           </div>
         </div>

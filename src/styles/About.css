@@ -1,5 +1,5 @@
 .about-section {
-  padding: 100px 24px;
+  padding: 60px 24px 80px;
   position: relative;
   z-index: 1;
 }
@@ -234,4 +234,36 @@
   .section-title {
     font-size: 2rem;
   }
+}
+
+.projects-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
+}
+
+.projects-button {
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-color-alt));
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Manrope', sans-serif;
+  box-shadow: 0 5px 15px rgba(138, 180, 248, 0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.projects-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(138, 180, 248, 0.5);
+}
+
+.projects-button:active {
+  transform: translateY(-1px);
 } 
