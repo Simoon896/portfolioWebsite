@@ -5,9 +5,6 @@ function Footer() {
   
   return (
     <footer className="footer">
-      <div className="starlight-line">
-        <span className="typing">stellar connection established</span>
-      </div>
       
       <div className="footer-container">
         <div className="footer-content">
@@ -40,10 +37,9 @@ function Footer() {
             <div className="footer-link-group">
               <h4>Connect</h4>
               <ul>
-                <li><a href="https://github.com/simon" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/simon" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="https://twitter.com/simon_design" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                <li><a href="mailto:simon@cosmic-design.com">Email</a></li>
+                <li><a href="https://github.com/simoon896" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/simon-kuester-5bb20228b/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="mailto:simonkuester@gmail.com">Email</a></li>
               </ul>
             </div>
           </div>
