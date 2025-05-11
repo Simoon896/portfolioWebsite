@@ -1,8 +1,9 @@
 .contact-section {
-  padding: 100px 24px;
+  padding: 100px 24px 100px;
   background-color: var(--primary-bg);
   position: relative;
   z-index: 1;
+  margin-bottom: 0;
 }
 
 .contact-container {
@@ -53,20 +54,22 @@
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 5px;
   margin-top: 50px;
 }
 
 .contact-info {
   background-color: rgba(10, 15, 28, 0.7);
   border-radius: 16px;
-  padding: 40px;
+  padding: 25px 25px 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
               0 0 15px rgba(138, 180, 248, 0.1);
   border: 1px solid rgba(138, 180, 248, 0.2);
   backdrop-filter: blur(10px);
   transform: perspective(1000px) rotateX(2deg);
   transition: transform 0.3s ease;
+  max-width: 90%;
+  margin-bottom: 200px;
 }
 
 .contact-info:hover {
@@ -137,13 +140,14 @@
 .contact-form-container {
   background-color: rgba(10, 15, 28, 0.7);
   border-radius: 16px;
-  padding: 40px;
+  padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
               0 0 15px rgba(138, 180, 248, 0.1);
   border: 1px solid rgba(138, 180, 248, 0.2);
   backdrop-filter: blur(10px);
   transform: perspective(1000px) rotateX(-2deg);
   transition: transform 0.3s ease;
+  max-width: 90%;
 }
 
 .contact-form-container:hover {
@@ -270,7 +274,8 @@
 @media screen and (max-width: 576px) {
   .contact-info,
   .contact-form-container {
-    padding: 25px;
+    padding: 20px;
+    min-height: 0;
   }
   
   .contact-item h3 {

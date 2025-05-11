@@ -1,5 +1,6 @@
 import '../../styles/About.css';
 import Constellation from '../Constellation';
+import { Link } from 'react-router-dom';
 
 function About() {
   const skills = [
@@ -68,6 +69,12 @@ function About() {
               ))}
             </div>
           </div>
+        </div>
+        
+        <div className="projects-button-container">
+          <Link to="/projects" className="projects-button">
+            Explore My Projects
+          </Link>
         </div>
       </div>
     </section>
