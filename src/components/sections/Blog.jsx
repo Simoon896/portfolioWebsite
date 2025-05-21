@@ -77,9 +77,9 @@ function Blog() {
         </div>
 
         <div className="blog-cta">
-          <h3>Inspired by the Cosmos? Let's Create Together!</h3>
-          <p>Follow my design journey or reach out for collaboration opportunities.</p>
-          <a href="#contact" className="btn primary">Contact Me</a>
+          <h3>Have a Project in Mind?</h3>
+          <p>Let's collaborate to build something amazing together.</p>
+          <a href="/" className="btn btn-primary">Get in Touch</a>
         </div>
       </div>
     </section>

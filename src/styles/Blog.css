@@ -1,6 +1,5 @@
 .blog-section {
   padding: 100px 24px;
-  background-color: var(--primary-bg);
   position: relative;
   overflow: hidden;
 }
