@@ -108,6 +108,12 @@ function Projects() {
             </div>
           ))}
         </div>
+        
+        <div className="project-cta">
+          <h3>Have a Project in Mind?</h3>
+          <p>Let's collaborate to build something amazing together.</p>
+          <a href="/" className="btn btn-primary">Get in Touch</a>
+        </div>
       </div>
     </section>
   );

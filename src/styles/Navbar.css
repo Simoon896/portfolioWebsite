@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(5, 10, 20, 0.6);
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -7,9 +7,9 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(138, 180, 248, 0.15);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(138, 180, 248, 0.4);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
   padding: 0;
   width: 100%;
 }
@@ -216,8 +216,8 @@
     left: -100%;
     opacity: 0;
     transition: all 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(15px);
+    background-color: rgba(5, 10, 20, 0.6);
+    backdrop-filter: blur(10px);
     margin-left: 0;
   }
 
@@ -233,7 +233,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid rgba(138, 180, 248, 0.1);
+    border-bottom: 1px solid rgba(138, 180, 248, 0.3);
   }
 
   .nav-link {

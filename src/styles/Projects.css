@@ -1,6 +1,5 @@
 .projects-section {
   padding: 100px 24px;
-  background-color: var(--primary-bg);
   position: relative;
   overflow: hidden;
 }
@@ -155,6 +154,31 @@
   color: var(--accent-color-alt);
 }
 
+/* Added CTA Section Styles */
+.project-cta {
+  background-color: rgba(10, 16, 32, 0.7);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(138, 180, 248, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  margin-top: 60px;
+}
+
+.project-cta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+  font-family: 'Manrope', sans-serif;
+}
+
+.project-cta p {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 25px;
+}
+
 @media screen and (max-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -167,6 +191,14 @@
   .project-link {
     width: 100%;
     justify-content: center;
+  }
+  
+  .project-cta {
+    padding: 30px 20px;
+  }
+  
+  .project-cta h3 {
+    font-size: 1.5rem;
   }
 }
 

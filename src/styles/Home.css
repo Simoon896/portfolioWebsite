@@ -32,16 +32,16 @@
   backdrop-filter: blur(10px);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
-              0 0 15px rgba(138, 180, 248, 0.1);
-  border: 1px solid rgba(138, 180, 248, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 0 15px rgba(138, 180, 248, 0.3);
+  border: 1px solid rgba(138, 180, 248, 0.4);
 }
 
 .greeting-header {
   padding: 20px;
   position: relative;
   background-color: rgba(0, 2, 8, 0.8);
-  border-bottom: 1px solid rgba(138, 180, 248, 0.1);
+  border-bottom: 1px solid rgba(138, 180, 248, 0.4);
 }
 
 .constellation {
@@ -104,6 +104,7 @@
   font-size: 3.2rem;
   margin-bottom: 15px;
   font-weight: 700;
+  font-family: 'Manrope', sans-serif;
   background: linear-gradient(to right, var(--text-primary), var(--accent-color));
   -webkit-background-clip: text;
   background-clip: text;
