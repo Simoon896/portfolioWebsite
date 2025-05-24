@@ -26,10 +26,6 @@ section {
   }
 }
 
-section:nth-child(even) {
-  /* Optional: slightly different background for alternating sections */
-  /* background-color: var(--background-end); */
-}
 
 section h2 {
   font-size: 2.5rem;
