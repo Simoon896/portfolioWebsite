@@ -1,7 +1,8 @@
 import '../../styles/About.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function About() {
+  const navigate = useNavigate();
   const skills = [
     { category: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React', 'Vue.js'] },
     { category: 'Backend', items: ['Node.js', 'Python (Django/Flask)', 'Java (Spring)', 'REST APIs', 'GraphQL'] },
@@ -66,9 +67,9 @@ function About() {
           <Link to="/projects" className="btn btn-primary">
             Explore My Projects
           </Link>
-          <a href="/#contact" className="btn btn-secondary ml-3">
+          <button onClick={() => navigate('/contact')} className="btn btn-secondary ml-3">
             Get In Touch
-          </a>
+          </button>
         </div>
       </div>
     </section>

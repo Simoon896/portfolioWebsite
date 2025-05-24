@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/Projects.css';
 
 function Projects() {
+  const navigate = useNavigate();
   const [projects] = useState([
     {
       id: 1,
@@ -99,8 +101,8 @@ function Projects() {
           ))}
         </div>
 
-        <div className="text-center mt-5">
-          <a href="/#contact" className="btn btn-primary">Have a Project Idea? Get in Touch</a>
+        <div className="text-center mt-5 projects-cta-container">
+          <button onClick={() => navigate('/contact')} className="btn btn-primary">Have a Project Idea? Get in Touch</button>
         </div>
       </div>
     </section>

@@ -159,8 +159,9 @@
     /* margin: 0 auto; */
   }
   .hero-image-container {
-    order: -1; /* Image appears above text on smaller screens */
-    margin-bottom: 2rem; /* Space between image and text when stacked */
+    /* order: -1; */ /* Removed: Image will now appear after text in source order */
+    margin-top: 2rem; /* Add some margin above the image when it's below text */
+    /* margin-bottom: 2rem; */ /* No longer needed if it's the last element in this stack */
   }
   .hero-image {
     max-width: 70%; /* Control image size on smaller screens */
@@ -171,10 +172,14 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   .home-section {
     padding: 3rem 1rem;
     min-height: calc(100vh - 110px); /* Adjust for navbar and footer if static */
+  }
+
+  .hero-image-container {
+    display: none; /* Hide image on very small screens */
   }
 
   .home-content h1 {

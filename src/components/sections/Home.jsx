@@ -12,7 +12,7 @@ function Home() {
           <div className="hero-text">
             <span className="greeting">Hello, I'm</span>
             <h1>Simon Kuester</h1>
-            <p className="hero-subtitle">Web Developer & Software Engineer</p>
+            <p className="hero-subtitle">Cybersecurity & Network Specialist</p>
             <p className="hero-description">
               I am a passionate developer focused on creating elegant and efficient solutions.
               Explore my work and get in touch!
