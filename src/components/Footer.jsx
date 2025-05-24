@@ -5,26 +5,20 @@ function Footer() {
   
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-content">
-          
-          <div className="footer-links">
-            <div className="footer-social">
-              <a href="https://github.com/simoon896" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <i className="fab fa-github"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/simon-kuester-5bb20228b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="mailto:simonkuester@gmail.com" aria-label="Email">
-                <i className="fas fa-envelope"></i>
-              </a>
-            </div>
-          </div>
+      <div className="footer-container container">
+        <div className="footer-social">
+          <a href="https://github.com/simoon896" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i className="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/simon-kuester-5bb20228b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:simonkuester@gmail.com" aria-label="Email">
+            <i className="fas fa-envelope"></i>
+          </a>
         </div>
-        
         <div className="footer-bottom">
-          <p>&copy; {currentYear} <span className="accent-text">Made with ❤️ by Simon Kuester</span></p>
+          <p>&copy; {currentYear} Simon Kuester. All rights reserved.</p>
         </div>
       </div>
     </footer>

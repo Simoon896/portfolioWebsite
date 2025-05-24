@@ -1,15 +1,14 @@
 .layout {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
+  font-family: 'Roboto', sans-serif; /* Ensure consistent font */
 }
 
 .main-content {
   flex: 1 0 auto;
-  position: relative;
-  z-index: 1;
-  padding-top: 80px; /* Add padding to account for the navbar height */
-} 
+  padding-top: 60px; /* Adjust if navbar height changes, or use dynamic calculation */
+  width: 100%; /* Let the container class in children handle max-width */
+}
+
+/* Removed .background-gradient as it's not part of the new design */ 
