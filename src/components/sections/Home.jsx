@@ -1,54 +1,30 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import DailyQuote from '../DailyQuote';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/Home.css';
+import headshot from '../../assets/head.jpg';
 
 function Home() {
-  const [text, setText] = useState('');
-  const fullText = "Developer | Web Designer | Network Specialist";
-  const typingSpeed = 60;
-  
-  useEffect(() => {
-    let currentIndex = 0;
-    const typingInterval = setInterval(() => {
-      setText(fullText.slice(0, currentIndex));
-      currentIndex++;
-      
-      if (currentIndex > fullText.length) {
-        clearInterval(typingInterval);
-      }
-    }, typingSpeed);
-    
-    return () => clearInterval(typingInterval);
-  }, []);
-  
+  const navigate = useNavigate();
+
   return (
     <section id="home" className="home-section">
-      <div className="home-content">
-        <div className="greeting-container">
-          <div className="greeting-header">
-            <div className="constellation">
-              <div className="star star-1"></div>
-              <div className="star star-2"></div>
-              <div className="star star-3"></div>
+      <div className="container">
+        <div className="home-content">
+          <div className="hero-text">
+            <span className="greeting">Hello, I'm</span>
+            <h1>Simon Kuester</h1>
+            <p className="hero-subtitle">Web Developer & Software Engineer</p>
+            <p className="hero-description">
+              I am a passionate developer focused on creating elegant and efficient solutions.
+              Explore my work and get in touch!
+            </p>
+            <div className="cta-buttons">
+              <Link to="/projects" className="btn btn-primary">My Projects</Link>
+              <button onClick={() => navigate('/about')} className="btn btn-secondary">About Me</button>
+              <button onClick={() => navigate('/contact')} className="btn btn-secondary">Contact Me</button>
             </div>
           </div>
-          <div className="greeting-body">
-            <h1>Hi, I'm Simon</h1>
-            <h2 className="typing-text">{text}<span className="cursor">|</span></h2>
-            <DailyQuote />
-            <div className="cta-buttons">
-              <Link to="/blog" className="btn btn-primary">Read My Blog</Link>
-              <Link to="/projects" className="btn">View Projects</Link>
-              <Link to="#about" className="btn" onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-              }}>About Me</Link>
-              <Link to="#contact" className="btn" onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-              }}>Contact</Link>
-            </div>
+          <div className="hero-image-container">
+            <img src={headshot} alt="Simon Kuester headshot" className="hero-image" />
           </div>
         </div>
       </div>

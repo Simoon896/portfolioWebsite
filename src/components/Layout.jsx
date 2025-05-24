@@ -1,19 +1,34 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Moon from './Moon';
-import StarryBackground from './StarryBackground';
 import '../styles/Layout.css';
 
 function Layout({ children }) {
+  const location = useLocation();
+
+  // Add smooth scroll effect for anchor links
+  useEffect(() => {
+    const handleAnchorClick = (e) => {
+      const target = e.target;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const id = target.getAttribute('href');
+        document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
+
   return (
     <div className="layout">
-      <StarryBackground />
-      <Moon />
       <Navbar />
       <main className="main-content">
         {children}
       </main>
-      <Footer />
+      {location.pathname !== '/' && <Footer />}
     </div>
   );
 }

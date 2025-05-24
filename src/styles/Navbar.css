@@ -1,81 +1,49 @@
 .navbar {
-  background-color: rgba(5, 10, 20, 0.6);
-  height: 80px;
+  background-color: var(--card-background); /* Use card background for a clean look */
+  /* backdrop-filter: blur(8px); */ /* Removing blur for a cleaner, solid look, can be re-added if preferred */
+  /* -webkit-backdrop-filter: blur(8px); */
+  height: 60px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 999;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(138, 180, 248, 0.4);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-  padding: 0;
+  left: 0;
   width: 100%;
+  z-index: 1000;
+  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease, padding var(--transition-speed) ease; /* Added padding transition */
+  box-shadow: none; /* Initially no shadow, shadow on scroll */
+  padding: 0.5rem 0; /* Initial padding */
+}
+
+.navbar.scrolled {
+  /* background-color: rgba(255, 255, 255, 0.95); */ /* Keep it solid */
+  box-shadow: var(--shadow); 
+  padding: 0.25rem 0; /* This padding is for the <nav> element itself, not the container */
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0;
-  padding: 0;
+  width: 100%; /* Ensure it spans full width */
+  height: 100%;
+  padding: 0 2rem; /* Add horizontal padding for desktop */
+  max-width: 100%; /* Override any potential inherited max-width if issues arise */
+  /* .container class applied in JSX handles max-width and horizontal padding */
 }
 
 .navbar-logo {
-  color: var(--accent-color);
-  font-size: 1.8rem;
-  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.6rem; /* Slightly larger logo */
+  font-weight: 700;
   text-decoration: none;
-  letter-spacing: 1px;
-  margin: 0;
-  padding-left: 55px;
-  margin-right: auto;
-  transition: all 0.3s ease;
-}
-
-.logo-text {
-  font-family: 'Manrope', sans-serif;
-  transition: all 0.3s ease;
-  background: linear-gradient(to right, #ffffff, var(--accent-color));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
-
-.logo-text::before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
-  top: -10px;
-  left: -10px;
-  filter: blur(3px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.navbar-logo:hover .logo-text::before {
-  opacity: 1;
+  transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
 .navbar-logo:hover {
-  background-color: transparent;
-}
-
-.terminal-cursor {
-  animation: blink 1s step-end infinite;
-  -webkit-text-fill-color: var(--accent-color);
-}
-
-@keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
+  color: var(--primary-darker);
+  transform: scale(1.03); /* Slight scale effect on hover */
 }
 
 .nav-menu {
@@ -83,174 +51,124 @@
   align-items: center;
   list-style: none;
   margin: 0;
-  padding-right: 20px;
+  padding: 0;
 }
 
 .nav-item {
-  height: 80px;
+  height: 100%; /* Ensure nav items take full height of navbar for click area */
   display: flex;
   align-items: center;
 }
 
 .nav-link {
-  color: var(--text-primary);
+  color: var(--text-color);
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1.2rem;
+  padding: 0.75rem 1.5rem; /* Increased padding: 0.75rem top/bottom, 1.5rem left/right */
   height: 100%;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Manrope', sans-serif;
+  transition: color var(--transition-speed) ease, background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  font-family: inherit;
   position: relative;
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 1rem; /* Slightly increased font size */
 }
 
-.nav-link:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 25px;
-  left: 50%;
-  background: linear-gradient(to right, transparent, var(--accent-color), transparent);
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
+.nav-link:hover,
+.nav-link.active { 
+  color: var(--primary-color); /* Change to primary color on hover/active */
+  background-color: var(--nav-link-hover-bg); /* Added light gray background hover */
+  transform: translateY(-2px); /* Slightly more noticeable lift */
 }
 
-.nav-link:before {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%) scale(0);
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 10px rgba(138, 180, 248, 0.8);
-}
+/* Removed .nav-link:after for a cleaner look, hover provides enough feedback */
 
-.nav-link:hover {
-  color: var(--accent-color);
-}
-
-.nav-link:hover:after {
-  width: 70%;
-}
-
-.nav-link:hover:before {
-  transform: translateX(-50%) scale(1);
-}
-
+/* Hamburger Menu Icon */
 .menu-icon {
   display: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease;
+}
+.menu-icon:hover {
+  background-color: rgba(0,0,0,0.05);
 }
 
+.menu-icon-bar {
+  display: block;
+  width: 25px;
+  height: 2px; /* Thinner bars */
+  background-color: var(--text-color);
+  margin: 6px 0; /* Increased margin for better separation */
+  transition: all 0.25s ease-in-out; /* Slightly faster hamburger transition */
+  border-radius: 1px;
+}
+
+/* Mobile Menu Styles */
 @media screen and (max-width: 768px) {
   .navbar-container {
-    padding: 0;
-  }
-  
-  .navbar-logo {
-    padding-left: 15px;
+    padding: 0 1rem; /* Adjust padding for mobile */
   }
 
   .menu-icon {
     display: block;
-    position: relative;
-    width: 30px;
-    height: 22px;
-    cursor: pointer;
-    margin-right: 10px;
+    z-index: 1001;
   }
 
-  .menu-icon span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: var(--accent-color);
-    border-radius: 3px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
+  .menu-icon.active .menu-icon-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
   }
-
-  .menu-icon span:nth-child(1) {
-    top: 0px;
-  }
-
-  .menu-icon span:nth-child(2) {
-    top: 9px;
-  }
-
-  .menu-icon span:nth-child(3) {
-    top: 18px;
-  }
-
-  .menu-icon.active span:nth-child(1) {
-    top: 9px;
-    transform: rotate(135deg);
-  }
-
-  .menu-icon.active span:nth-child(2) {
+  .menu-icon.active .menu-icon-bar:nth-child(2) {
     opacity: 0;
-    left: -60px;
   }
-
-  .menu-icon.active span:nth-child(3) {
-    top: 9px;
-    transform: rotate(-135deg);
+  .menu-icon.active .menu-icon-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .nav-menu {
-    display: flex;
     flex-direction: column;
+    align-items: stretch; /* Stretch items to full width */
+    justify-content: flex-start;
     width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 80px;
+    min-height: calc(100vh - 60px); /* Ensure it takes at least full screen */
+    position: fixed; /* Use fixed for full screen overlay */
+    top: 60px;
     left: -100%;
     opacity: 0;
-    transition: all 0.5s ease;
-    background-color: rgba(5, 10, 20, 0.6);
-    backdrop-filter: blur(10px);
-    margin-left: 0;
+    transition: left 0.35s ease-in-out, opacity 0.35s ease-in-out; /* Smoother mobile menu transition */
+    background-color: var(--card-background); /* Ensure mobile menu uses card background */
+    padding-top: 1rem;
+    padding-bottom: 2rem; /* Add padding at bottom */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
 
   .nav-menu.active {
     left: 0;
     opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
   }
 
   .nav-item {
-    height: 60px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    border-bottom: 1px solid rgba(138, 180, 248, 0.3);
+    height: auto;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .nav-item:last-child {
+    border-bottom: none;
   }
 
   .nav-link {
-    text-align: center;
+    text-align: left; /* Align text to the left for a more standard mobile menu */
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    transition: all 0.3s ease;
+    padding: 1.2rem 1.5rem; /* Increased padding for touch targets */
+    font-size: 1.05rem; /* Slightly larger font for mobile */
   }
-  
-  .nav-link:after {
-    bottom: 15px;
-  }
-  
-  .nav-link:before {
-    top: 15px;
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: var(--nav-link-hover-bg); /* Consistent hover background for mobile */
+    color: var(--primary-color); /* Consistent hover color for mobile */
+    transform: none; 
   }
 } 

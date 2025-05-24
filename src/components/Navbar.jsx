@@ -1,79 +1,51 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [logoText, setLogoText] = useState("Simoon");
-  const [isHovering, setIsHovering] = useState(false);
-  const hoverTimeoutRef = useRef(null);
-  const oCountRef = useRef(2);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  
+  const navbarHeight = 60; // Updated navbar height
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Add scroll effect to navbar
   useEffect(() => {
-    if (isHovering) {
-      hoverTimeoutRef.current = setInterval(() => {
-        if (oCountRef.current < 12) {
-          oCountRef.current += 1;
-          setLogoText("Sim" + "o".repeat(oCountRef.current) + "n");
-        } else {
-          clearInterval(hoverTimeoutRef.current);
-        }
-      }, 150);
-    } else {
-      clearInterval(hoverTimeoutRef.current);
-      oCountRef.current = 2;
-      setLogoText("Simoon");
-    }
-
-    return () => {
-      clearInterval(hoverTimeoutRef.current);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
-  }, [isHovering]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close menu when route changes and scroll to top
   useEffect(() => {
     setIsOpen(false);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0); // Let sections handle their own scroll if needed
   }, [location.pathname]);
 
   // Function to handle scrolling to sections on the homepage
   const scrollToSection = (id) => {
-    // If we're not on the homepage, navigate there first
     if (location.pathname !== '/') {
       navigate('/');
-      
-      // Add a small delay to allow page transition before scrolling
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          const navbarHeight = 80; // Height of the navbar
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
           const offsetPosition = elementPosition - navbarHeight;
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         }
       }, 100);
     } else {
-      // If we're already on the homepage, scroll directly
       const element = document.getElementById(id);
       if (element) {
-        const navbarHeight = 80; // Height of the navbar
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - navbarHeight;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       }
     }
     setIsOpen(false);
@@ -81,48 +53,57 @@ function Navbar() {
 
   // Function to navigate to page and scroll to top
   const navigateToPage = (e, path) => {
-    e.preventDefault(); // Prevent default Link behavior
-    window.scrollTo(0, 0); // Scroll to top immediately
-    navigate(path); // Then navigate
+    e.preventDefault();
+    // window.scrollTo(0, 0); // Let sections handle their own scroll
+    navigate(path);
     setIsOpen(false);
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <a 
-          href="/"
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container"> {/* Removed .container for full width */}
+        <Link
+          to="/"
           className="navbar-logo"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
           onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo(0, 0);
-            navigate('/');
+            // e.preventDefault(); // Allow default Link behavior for navigation
+            if (location.pathname === '/') {
+                e.preventDefault(); // Prevent navigation if already on home
+                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            setIsOpen(false); // Close menu on logo click
           }}
         >
-          <span className="logo-text">{logoText}</span>
-        </a>
+          simoon.dev
+        </Link>
         <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
+          <div className="menu-icon-bar"></div>
+          <div className="menu-icon-bar"></div>
+          <div className="menu-icon-bar"></div>
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+          {/* <li className="nav-item">
+            <Link to="/" className="nav-link" onClick={(e) => {
+              if (location.pathname === '/') {
+                e.preventDefault();
+                scrollToSection('home');
+              } else {
+                // Allow default link behavior to navigate to home then scroll
+                // The scrollToSection logic will handle it after navigation
+                // Or, we can navigate and then scroll in a more controlled way if needed
+                 navigate('/');
+                 setTimeout(() => scrollToSection('home'), 100);
+              }
+            }}>Home</Link>
+          </li> */}
           <li className="nav-item">
-            <Link to="/" className="nav-link" onClick={() => scrollToSection('home')}>Home</Link>
+            <Link to="/about" className="nav-link" onClick={(e) => navigateToPage(e, '/about')}>About</Link>
           </li>
           <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
+            <Link to="/projects" className="nav-link" onClick={(e) => navigateToPage(e, '/projects')}>Projects</Link>
           </li>
           <li className="nav-item">
-            <a href="/blog" className="nav-link" onClick={(e) => navigateToPage(e, '/blog')}>Blog</a>
-          </li>
-          <li className="nav-item">
-            <a href="/projects" className="nav-link" onClick={(e) => navigateToPage(e, '/projects')}>Projects</a>
-          </li>
-          <li className="nav-item">
-            <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
+            <Link to="/contact" className="nav-link" onClick={(e) => navigateToPage(e, '/contact')}>Contact</Link>
           </li>
         </ul>
       </div>
