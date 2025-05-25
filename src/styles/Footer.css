@@ -1,7 +1,7 @@
 .footer {
   background-color: #0A2540; /* Using the new primary color (Deep Blue) for a strong base */
   color: var(--background-color); /* Light text on dark background */
-  padding: 2.5rem 0; /* Slightly more padding */
+  padding: 1.5rem 0; /* Reduced padding */
   text-align: center;
   margin-top: auto; /* Ensure footer is at the bottom if content is short */
 }
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; /* Space between social links and bottom text */
+  gap: 0.5rem; /* Reduced gap */
 }
 
 .footer-social {
@@ -21,7 +21,7 @@
 
 .footer-social a {
   color: var(--background-color); /* Light icon color */
-  font-size: 1.6rem; /* Slightly larger icons */
+  font-size: 1.2rem; /* Reduced font size */
   transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .footer-bottom p {
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* Reduced font size */
   margin: 0;
   color: #A0AEC0; /* Lighter, more modern gray for copyright text */
 }
@@ -41,14 +41,14 @@
 
 @media screen and (max-width: 576px) {
   .footer {
-    padding: 1.5rem 0;
+    padding: 1rem 0; /* Reduced padding for mobile */
   }
 
   .footer-social a {
-    font-size: 1.25rem; /* Slightly smaller icons on mobile */
+    font-size: 1rem; /* Reduced font size for mobile */
   }
 
   .footer-bottom p {
-    font-size: 0.8rem;
+    font-size: 0.7rem; /* Reduced font size for mobile */
   }
 }

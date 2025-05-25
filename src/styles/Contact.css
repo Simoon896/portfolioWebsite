@@ -40,7 +40,7 @@
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 2.5rem; /* Increased gap */
-  align-items: stretch; /* Make cards in a row same height */
+  align-items: start; /* Make cards in a row same height */
 }
 
 .contact-info.card,
@@ -49,6 +49,11 @@
   display: flex;
   flex-direction: column;
   /* General card styles are inherited */
+}
+
+/* Specifically target the Get In Touch card for reduced vertical padding */
+.contact-info.card {
+  padding: 2rem 2rem; /* 1rem top/bottom, 2rem left/right */
 }
 
 .contact-info h3, .contact-form-container h3 {
@@ -87,7 +92,7 @@
 .social-links-contact {
   display: flex;
   gap: 1.25rem;
-  margin-top: auto; /* Push social links to bottom of card */
+  margin-top: 1.5rem; /* Push social links to bottom of card */
 }
 
 .social-links-contact a {
