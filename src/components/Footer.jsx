@@ -18,7 +18,7 @@ function Footer() {
           </a>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Simon Kuester. All rights reserved.</p>
+          <p>&copy; {currentYear} Made with ❤️ by Simon Kuester</p>
         </div>
       </div>
     </footer>
