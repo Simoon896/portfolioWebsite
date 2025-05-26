@@ -97,14 +97,14 @@ function Contact() {
               <form className="contact-form" onSubmit={handleSubmit}>
                  <h3>Send a Message</h3>
                 <div className="form-group">
-                  <label htmlFor="name">Full Name</label>
+                  <label htmlFor="name">Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
-                    placeholder="Your Full Name"
+                    placeholder="Your Name"
                     required
                   />
                 </div>

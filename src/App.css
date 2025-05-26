@@ -300,3 +300,9 @@ button:hover, .button:hover {
     padding: 10px 20px;
   }
 }
+
+body.homepage-no-scroll {
+  overflow-y: hidden;
+}
+
+/* Styling for the hero section on the HomePage */
