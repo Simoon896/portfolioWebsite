@@ -96,6 +96,8 @@
 .cta-buttons .btn-primary:hover {
   background-color: #138496; /* Darker accent */
   border-color: #138496;
+  transform: translateY(-2px) scale(1.05); /* Added scale */
+  box-shadow: 0 8px 20px -6px rgba(0, 191, 166, 0.5), var(--shadow-hover); /* Enhanced shadow with accent glow */
 }
 
 .cta-buttons .btn-secondary {
@@ -110,6 +112,8 @@
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
   color: #fff;
+  transform: translateY(-2px) scale(1.03); /* Added scale */
+  box-shadow: var(--shadow-hover);
 }
 
 /* Generic fadeIn for elements that might not need slide */
@@ -143,6 +147,12 @@
   object-fit: cover; /* Ensures image covers the area, might crop */
   /* Consider adding aspect-ratio if you want a fixed shape */
   /* aspect-ratio: 1 / 1; */ 
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; /* Added transition */
+}
+
+.hero-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px -8px rgba(0,0,0,0.15), 0 10px 15px -8px rgba(0,0,0,0.1);
 }
 
 /* Responsive styles */

@@ -10,6 +10,9 @@ function HomePage() {
   const location = useLocation();
 
   useEffect(() => {
+    // Add class to body when component mounts
+    document.body.classList.add('homepage-no-scroll');
+
     if (location.hash) {
       const id = location.hash.replace('#', '');
       const element = document.getElementById(id);
@@ -24,7 +27,12 @@ function HomePage() {
     // else if (!location.hash) { 
     //   window.scrollTo(0, 0);
     // }
-  }, [location]);
+
+    // Remove class from body when component unmounts
+    return () => {
+      document.body.classList.remove('homepage-no-scroll');
+    };
+  }, [location]); // Dependency array includes location to re-run if hash changes
 
   return (
     <Layout>

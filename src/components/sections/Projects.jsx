@@ -1,63 +1,39 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../../styles/Projects.css';
+import portfolioSnap from '../../assets/portfolioSnap.PNG';
+import linkSnifferSnap from '../../assets/linkSnifferSnap.PNG';
+import catalogrSnap from '../../assets/catalogrSnap.png';
 
 function Projects() {
   const navigate = useNavigate();
   const [projects] = useState([
     {
       id: 1,
-      title: "Project Alpha",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      githubLink: "#",
-      demoLink: "#",
-      image: "https://via.placeholder.com/600x400/007bff/ffffff?text=Project+Alpha"
+      title: "simoon.dev",
+      description: "A React-based personal portfolio website to showcase my projects and skills. It features a modern design, smooth animations, and a responsive layout.",
+      tech: ["React", "JavaScript", "HTML", "CSS", "React Router"],
+      githubLink: "https://github.com/Simoon896/portfolioWebsite",
+      demoLink: "/portfolio-project-details",
+      image: portfolioSnap
     },
     {
       id: 2,
-      title: "Service Beta",
-      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      tech: ["Python", "Django", "PostgreSQL", "AWS"],
-      githubLink: "#",
-      demoLink: "#",
-      image: "https://via.placeholder.com/600x400/6c757d/ffffff?text=Service+Beta"
+      title: "LinkSniffer",
+      description: "A Google Chrome extension that automatically refreshes a page and detects new links, useful for monitoring updates.",
+      tech: ["JavaScript", "HTML", "CSS", "Chrome API"],
+      githubLink: "https://github.com/Simoon896/LinkSniffer",
+      demoLink: "/linksniffer-project-details",
+      image: linkSnifferSnap
     },
     {
       id: 3,
-      title: "Application Gamma",
-      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-      tech: ["Java", "Spring Boot", "MySQL", "Docker"],
-      githubLink: "#",
-      demoLink: "#",
-      image: "https://via.placeholder.com/600x400/17a2b8/ffffff?text=App+Gamma"
-    },
-    {
-      id: 4,
-      title: "Moon Phase Calendar",
-      description: "An elegant application that tracks moon phases, lunar events, and provides a visual calendar with astronomical data.",
-      tech: ["JavaScript", "SVG", "Astronomy API", "PWA"],
-      githubLink: "https://github.com/simon/moon-calendar",
-      demoLink: "https://moon-phase-calendar.demo",
-      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Moon+Calendar"
-    },
-    {
-      id: 5,
-      title: "Nebula Portfolio Template",
-      description: "A customizable portfolio website template for designers and developers with stunning space-inspired visual effects.",
-      tech: ["HTML", "CSS", "JavaScript", "GSAP"],
-      githubLink: "https://github.com/simon/nebula-portfolio",
-      demoLink: "https://nebula-portfolio.demo",
-      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Nebula+Portfolio"
-    },
-    {
-      id: 6,
-      title: "Starry Night Wallpaper Generator",
-      description: "Web application that generates custom starry night wallpapers with adjustable star density, colors, and cosmic effects.",
-      tech: ["Canvas API", "JavaScript", "Color Theory", "React"],
-      githubLink: "https://github.com/simon/wallpaper-gen",
-      demoLink: "https://starry-wallpaper.demo",
-      image: "https://via.placeholder.com/600x340/0a1020/8ab4f8?text=Wallpaper+Generator"
+      title: "Catalogr",
+      description: "A comprehensive inventory management application designed to help you keep track of your personal belongings.",
+      tech: ["React Native", "TypeScript", "Expo Go", "SQLite", "Appwrite", "Formspree"],
+      githubLink: "https://github.com/Simoon896/Exam2MAD",
+      demoLink: "/catalogr-project-details",
+      image: catalogrSnap
     }
   ]);
 
@@ -76,7 +52,13 @@ function Projects() {
                 <img src={project.image} alt={project.title} className="project-image" />
               </div>
               <div className="project-content">
-                <h3>{project.title}</h3>
+                {(project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr") ? (
+                  <Link to={project.demoLink} className="project-title-link">
+                    <h3>{project.title}</h3>
+                  </Link>
+                ) : (
+                  <h3>{project.title}</h3>
+                )}
                 <p className="project-description">{project.description}</p>
                 <div className="tech-stack">
                   <strong>Technologies:</strong>
@@ -86,9 +68,15 @@ function Projects() {
                 </div>
                 <div className="project-links">
                   {project.demoLink && project.demoLink !== "#" && (
-                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary">
-                      <i className="fas fa-external-link-alt mr-1"></i> Live Demo
-                    </a>
+                    (project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr") ? (
+                      <Link to={project.demoLink} className="btn btn-sm btn-outline-primary">
+                        <i className="fas fa-external-link-alt mr-1"></i> View Details
+                      </Link>
+                    ) : (
+                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary">
+                        <i className="fas fa-external-link-alt mr-1"></i> Live Demo
+                      </a>
+                    )
                   )}
                   {project.githubLink && project.githubLink !== "#" && (
                     <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-secondary">
