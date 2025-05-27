@@ -1,12 +1,14 @@
 import '../../styles/About.css';
 import { Link, useNavigate } from 'react-router-dom';
+import aboutSnap from '../../assets/aboutSnap.png';
+import aboutSnap2 from '../../assets/aboutSnap2.jpg';
 
 function About() {
   const navigate = useNavigate();
   const skills = [
-    { category: 'Frontend', items: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React', 'Vue.js'] },
-    { category: 'Backend', items: ['Node.js', 'Python (Django/Flask)', 'Java (Spring)', 'REST APIs', 'GraphQL'] },
-    { category: 'Databases', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase'] },
+    { category: 'Certifications', items: ['Google Cybersecurity Professional'] },
+    { category: 'Front and Backend', items: ['React', 'Python', 'TypeScript', 'REST APIs', 'SQLite'] },
+    { category: 'Networking Skills', items: ['Cisco', 'AWS', 'Docker', 'CI/CD'] },
     { category: 'DevOps & Tools', items: ['Git & GitHub', 'Docker', 'CI/CD', 'AWS', 'Webpack'] },
   ];
 
@@ -22,17 +24,24 @@ function About() {
             <div className="about-text">
               <div className="card p-4">
                 <h3>Who I Am</h3>
+                <div className="about-image-container">
+                  <img src={aboutSnap} alt="Profile" className="about-profile-image" />
+                </div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  I'm a passionate developer with a love for creating elegant, user-friendly web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.
                 </p>
                 <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  My approach combines technical expertise with creative problem-solving to build solutions that not only work flawlessly but also provide exceptional user experiences.
                 </p>
 
                 <h4 className="mt-4 mb-2">My Journey</h4>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                  My journey in software development began with curiosity about how digital products work. This led me to explore various programming languages and frameworks, continuously expanding my skills while working on diverse projects across different industries.
                 </p>
+
+                <div className="about-secondary-image">
+                  <img src={aboutSnap2} alt="Working on projects" className="about-work-image" />
+                </div>
 
                 <h4 className="mt-4 mb-2">Education</h4>
                 <p className="mb-1">
@@ -49,7 +58,6 @@ function About() {
               <div className="skills-grid">
                 {skills.map((skillGroup, index) => (
                   <div key={index} className="skill-card card">
-                    {/* Removed icon for a cleaner look */}
                     <h4>{skillGroup.category}</h4>
                     <ul className="skill-list">
                       {skillGroup.items.map((skill, i) => (
