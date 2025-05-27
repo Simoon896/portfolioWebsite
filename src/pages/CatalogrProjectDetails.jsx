@@ -15,8 +15,6 @@ function CatalogrProjectDetails() {
       </header>
 
       <section className="project-image-section">
-        {/* For Catalogr, we'll use a single, slightly larger image by default. 
-            If you want two images side-by-side like LinkSniffer, we can adjust. */}
         <img src={catalogrSnap} alt="Catalogr Application Snapshot" className="project-main-image catalogr-main-image" />
       </section>
 
@@ -44,10 +42,10 @@ function CatalogrProjectDetails() {
         <h2>Technologies Used</h2>
         <div className="tech-icons">
           <span className="tech-tag">React Native</span>
-          <span className="tech-tag">JavaScript (ES6+)</span>
-          <span className="tech-tag">Firebase (Firestore/Auth)</span>
-          <span className="tech-tag">SQLite (Local Storage)</span>
+          <span className="tech-tag">TypeScript</span>
+          <span className="tech-tag">SQLite</span>
           <span className="tech-tag">Expo</span>
+          <span className="tech-tag">Appwrite</span>
           {/* Add other relevant technologies if any */}
         </div>
       </section>
@@ -55,14 +53,14 @@ function CatalogrProjectDetails() {
       <section className="project-challenges card-style-section">
         <h2>Challenges & Solutions</h2>
         <p>
-          Integrating both cloud-based (Firebase) and local (SQLite) persistence seamlessly while ensuring data synchronization and offline capabilities was a primary challenge. This required careful planning of the data model and conflict resolution strategies. Implementing a robust warranty notification system that works reliably across different device states also posed an interesting technical hurdle.
+         PRODUCT CHALLENGES
         </p>
       </section>
 
       <section className="project-learnings card-style-section">
         <h2>What I Learned</h2>
         <p>
-          Building Catalogr significantly deepened my expertise in mobile application development with React Native and Expo. I gained extensive experience with state management in larger applications, integrating third-party services like Firebase, and managing local databases with SQLite. It also provided valuable lessons in UI/UX design for mobile platforms, especially concerning intuitive navigation and theme management.
+          Building Catalogr significantly deepened my expertise in mobile application development with React Native and Expo. I gained extensive experience with state management in larger applications, integrating third-party services like Appwrite, and managing local databases with SQLite. It also provided valuable lessons in UI/UX design for mobile platforms, especially concerning intuitive navigation and theme management.
         </p>
       </section>
 
