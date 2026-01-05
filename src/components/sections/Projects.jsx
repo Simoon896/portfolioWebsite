@@ -9,6 +9,16 @@ function Projects() {
   const navigate = useNavigate();
   const [projects] = useState([
     {
+      id: 4,
+      title: "Cyber Capstone",
+      description: "A hands-on cybersecurity capstone showcasing intrusion detection, vulnerability assessment, and incident response workflows.",
+      tech: ["Python", "Wireshark", "Splunk", "Kali Linux", "Metasploit"],
+      githubLink: "#",
+      demoLink: "/cybercapstoneproject",
+      youtubeId: "Z03sj1094u4",
+      image: null
+    },
+    {
       id: 1,
       title: "simoon.dev",
       description: "A React-based personal portfolio website to showcase my projects and skills. It features a modern design, smooth animations, and a responsive layout.",
@@ -49,10 +59,23 @@ function Projects() {
           {projects.map((project) => (
             <div className="project-card card" key={project.id}>
               <div className="project-image-container">
-                <img src={project.image} alt={project.title} className="project-image" />
+                {project.youtubeId ? (
+                  <div className="video-wrapper">
+                    <iframe
+                      className="project-video"
+                      src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}`}
+                      title={project.title + " demo"}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                ) : (
+                  <img src={project.image} alt={project.title} className="project-image" />
+                )}
               </div>
               <div className="project-content">
-                {(project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr") ? (
+                {(project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr" || project.title === "Cyber Capstone") ? (
                   <Link to={project.demoLink} className="project-title-link">
                     <h3>{project.title}</h3>
                   </Link>
@@ -68,7 +91,7 @@ function Projects() {
                 </div>
                 <div className="project-links">
                   {project.demoLink && project.demoLink !== "#" && (
-                    (project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr") ? (
+                    (project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr" || project.title === "Cyber Capstone") ? (
                       <Link to={project.demoLink} className="btn btn-sm btn-outline-primary">
                         <i className="fas fa-external-link-alt mr-1"></i> View Details
                       </Link>

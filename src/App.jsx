@@ -6,6 +6,8 @@ import ContactPage from './pages/ContactPage';
 import PortfolioProjectDetails from './pages/PortfolioProjectDetails';
 import LinkSnifferProjectDetails from './pages/LinkSnifferProjectDetails';
 import CatalogrProjectDetails from './pages/CatalogrProjectDetails';
+import CyberCapstoneProject from './pages/CyberCapstoneProject';
+import ResumePage from './pages/ResumePage';
 import './App.css';
 
 // New component to handle scrolling to top on route change
@@ -33,6 +35,8 @@ function App() {
         <Route path="/portfolio-project-details" element={<PortfolioProjectDetails />} />
         <Route path="/linksniffer-project-details" element={<LinkSnifferProjectDetails />} />
         <Route path="/catalogr-project-details" element={<CatalogrProjectDetails />} />
+        <Route path="/cybercapstoneproject" element={<CyberCapstoneProject />} />
+        <Route path="/resume" element={<ResumePage />} />
       </Routes>
     </Router>
   );

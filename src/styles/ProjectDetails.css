@@ -212,6 +212,78 @@
   box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
 }
 
+/* Resume page tweaks */
+.resume-page .project-header {
+  margin-bottom: 1.25rem;
+}
+
+.resume-links {
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.resume-links .btn {
+  min-width: 150px;
+}
+
+.resume-summary .resume-highlights {
+  margin-top: 1rem;
+}
+
+.resume-preview {
+  align-items: stretch;
+  text-align: left;
+  gap: 1.5rem;
+}
+
+.resume-preview-card {
+  flex: 1 1 520px;
+  padding: 0.75rem;
+  background-color: var(--card-background, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.resume-image {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border-color, #e0e0e0);
+  background-color: #f8f9fa;
+}
+
+.resume-preview-copy {
+  flex: 1 1 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.resume-file-instructions {
+  margin-top: 0.5rem;
+}
+
+.resume-inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.resume-inline-links .btn {
+  min-width: 150px;
+}
+
+.resume-footnote {
+  font-size: 0.95rem;
+  color: var(--secondary-text-color, #555);
+  margin-top: 0.25rem;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .project-details-container {
@@ -251,6 +323,16 @@
   .project-image-section {
     flex-direction: column;
     align-items: center;
+  }
+
+  .resume-preview-card,
+  .resume-preview-copy {
+    width: 100%;
+  }
+
+  .resume-inline-links .btn {
+    width: 100%;
+    max-width: 320px;
   }
 
   .project-main-image, /* Apply to all main images in responsive mode */
