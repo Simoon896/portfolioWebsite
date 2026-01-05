@@ -6,10 +6,10 @@ import aboutSnap2 from '../../assets/aboutSnap2.jpg';
 function About() {
   const navigate = useNavigate();
   const skills = [
-    { category: 'Certifications', items: ['Google Cybersecurity Professional'] },
-    { category: 'Front and Backend', items: ['React', 'Python', 'TypeScript', 'REST APIs', 'SQLite'] },
-    { category: 'Networking Skills', items: ['Cisco', 'AWS', 'Docker', 'CI/CD'] },
-    { category: 'DevOps & Tools', items: ['Git & GitHub', 'Docker', 'CI/CD', 'AWS', 'Webpack'] },
+    { category: 'Certifications', items: ['CompTIA A+ (Aug 2025)', 'CompTIA Security+ (Expected Jan 2026)', 'Google Cybersecurity Professional Certificate (Sep 2023)'] },
+    { category: 'Operating Systems & Networking', items: ['Windows 10/11', 'Windows Server', 'Linux', 'macOS', 'Active Directory', 'TCP/IP', 'DNS', 'DHCP'] },
+    { category: 'Support & Administration', items: ['User account management', 'Password resets', 'System troubleshooting', 'Documentation', 'Remote support'] },
+    { category: 'Security, Monitoring & Scripting', items: ['Wireshark', 'Snort', 'Wazuh', 'Splunk', 'Event Viewer', 'PowerShell', 'Bash', 'Python'] },
   ];
 
   return (
@@ -28,28 +28,48 @@ function About() {
                   <img src={aboutSnap} alt="Profile" className="about-profile-image" />
                 </div>
                 <p>
-                  I'm a passionate developer with a love for creating elegant, user-friendly web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.
+                  I’m an <strong>IT Support Specialist / Help Desk Technician</strong> with a cybersecurity background. I enjoy taking messy, real-world problems—device issues, access blockers, network hiccups—and turning them into clear fixes and repeatable processes.
                 </p>
                 <p>
-                  My approach combines technical expertise with creative problem-solving to build solutions that not only work flawlessly but also provide exceptional user experiences.
+                  My focus is reliable support: triaging quickly, troubleshooting methodically, and documenting solutions so teams stay productive and issues don’t come back.
                 </p>
 
                 <h4 className="mt-4 mb-2">My Journey</h4>
                 <p>
-                  My journey in software development began with curiosity about how digital products work. This led me to explore various programming languages and frameworks, continuously expanding my skills while working on diverse projects across different industries.
+                  Through labs and hands-on projects, I’ve built experience with <strong>Windows/Linux administration</strong>, <strong>Active Directory hardening</strong>, and <strong>security monitoring</strong>. I like learning by building—setting up environments, breaking things safely, and then locking them down.
                 </p>
 
                 <div className="about-secondary-image">
                   <img src={aboutSnap2} alt="Working on projects" className="about-work-image" />
                 </div>
 
+                <h4 className="mt-4 mb-2">Highlights</h4>
+                <ul className="about-highlights">
+                  <li><strong>Enterprise network lab:</strong> built a 6-VM environment, added VLAN segmentation, and enforced least-privilege with ~40 pfSense rules.</li>
+                  <li><strong>Detection & visibility:</strong> integrated Snort IDS and Wazuh SIEM; validated controls with Kali Linux attack simulations.</li>
+                  <li><strong>Linux automation:</strong> administered an Ubuntu home lab (NAS/Plex/VPN) with scripted, automated backup workflows.</li>
+                </ul>
+
                 <h4 className="mt-4 mb-2">Education</h4>
                 <p className="mb-1">
-                  <strong>B.S. in Computer Science</strong> - Lorem Ipsum University, 202X
+                  <strong>B.S. in Cybersecurity</strong> — University of North Georgia (2022–2025)
                 </p>
                  <p className="mb-3">
-                  <em>Relevant Coursework: Data Structures, Algorithms, Web Development, Database Management.</em>
+                  <em>GPA: 3.84/4.0 • Dean’s/President’s List (2022–2025)</em>
                 </p>
+                <p className="mb-3">
+                  <em>Relevant Coursework: Network Security, Operating Systems, Applied Cybersecurity, Script Programming.</em>
+                </p>
+
+                <h4 className="mt-4 mb-2">Experience</h4>
+                <p className="mb-1">
+                  <strong>Welocalize — Search Quality Rater</strong> (Remote, Jun 2024–Present)
+                </p>
+                <ul className="about-highlights">
+                  <li>Validated AI-generated content for accuracy and relevance in a queue-based workflow.</li>
+                  <li>Researched authoritative sources to verify information and flag misleading responses.</li>
+                  <li>Documented findings clearly to support corrections and maintain quality standards.</li>
+                </ul>
               </div>
             </div>
 

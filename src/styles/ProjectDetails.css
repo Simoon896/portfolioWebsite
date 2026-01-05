@@ -222,6 +222,24 @@
   gap: 1rem;
 }
 
+.resume-links .resume-action-btn {
+  color: #1f2937;
+  border: 2px solid #1f2937;
+  background-color: transparent;
+}
+
+.resume-links .resume-action-btn:hover,
+.resume-links .resume-action-btn:focus-visible {
+  background-color: #1f2937;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(31, 41, 55, 0.3);
+}
+
+.resume-links .resume-action-btn:active {
+  transform: translateY(-1px);
+}
+
 .resume-links .btn {
   min-width: 150px;
 }
@@ -247,7 +265,7 @@
 
 .resume-image {
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   height: auto;
   display: block;
   border-radius: 10px;

@@ -100,6 +100,31 @@
   color: var(--text-color);
 }
 
+.about-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+}
+
+.about-highlights li {
+  padding: 0.45rem 0;
+  color: var(--text-light);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.about-highlights li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 .about-text .card strong {
   color: var(--text-color);
   font-weight: 700;
