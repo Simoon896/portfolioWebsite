@@ -26,10 +26,10 @@ function About() {
                   <img src={aboutSnap2} alt="Working on projects" className="about-profile-image" />
                 </div>
                 <p>
-                  Hello! My name is Simon, and I’m an IT Support Specialist with a cybersecurity background. I enjoy taking messy, real-world problems—device issues, access blockers, network hiccups—and turning them into clear fixes and repeatable processes.
+                  Hello! My name is Simon, and I’m an IT Support Specialist and a recent cybersecurity graduate from the University of North Georgia. I enjoy taking messy, real-world problems—device issues, access blockers, network hiccups—and turning them into clear fixes and repeatable processes.
                 </p>
                 <p>
-                  My focus is reliable support: triaging quickly, troubleshooting methodically, and documenting solutions so teams stay productive and issues don’t come back.
+                  My focus is reliable support: triaging quickly, troubleshooting methodically, and documenting solutions so issues don't come back.
                 </p>
 
                 <h4 className="mt-4 mb-2">My Journey</h4>
@@ -43,7 +43,9 @@ function About() {
                   <li><strong>Detection & visibility:</strong> integrated Snort IDS and Wazuh SIEM; validated controls with Kali Linux attack simulations.</li>
                   <li><strong>Linux automation:</strong> administered an Ubuntu home lab (NAS/Plex/VPN) with scripted, automated backup workflows.</li>
                 </ul>
-
+                <p>
+                  Asides from the highlights above, I have many more projects that I have worked on that you can see on my projects page! These projects and writeups cover a wide range of computer science and cybersecurity topics that I have learned and applied over the past few years.
+                </p>
                 <h4 className="mt-4 mb-2">Education</h4>
                 <p className="mb-1">
                   <strong>B.S. in Cybersecurity</strong> — University of North Georgia (2022–2025)
@@ -52,7 +54,7 @@ function About() {
                   <em>GPA: 3.84/4.0 • Dean’s/President’s List (2022–2025)</em>
                 </p>
                 <p className="mb-3">
-                  <em>Relevant Coursework: Network Security, Operating Systems, Applied Cybersecurity, Script Programming.</em>
+                  <em>During my time at UNG, I have taken a variety of courses that have helped me to develop my skills and knowledge in the field of cybersecurity. I have taken courses in Network Security, Operating Systems, Applied Cybersecurity, Script Programming, and more.</em>
                 </p>
 
                 <h4 className="mt-4 mb-2">Experience</h4>
@@ -60,9 +62,7 @@ function About() {
                   <strong>Welocalize — Search Quality Rater</strong> (Remote, Jun 2024–Present)
                 </p>
                 <ul className="about-highlights">
-                  <li>Validated AI-generated content for accuracy and relevance in a queue-based workflow.</li>
-                  <li>Researched authoritative sources to verify information and flag misleading responses.</li>
-                  <li>Documented findings clearly to support corrections and maintain quality standards.</li>
+                 <p>Over the past year and a half, I have been working at Welocalize as a Search Quality Rater. I have been responsible for validating and improving the quality of search results for our clients. I have also been responsible for researching and verifying information for our clients.</p>
                 </ul>
               </div>
             </div>

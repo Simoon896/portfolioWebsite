@@ -14,7 +14,7 @@ function Home() {
             <h1>Simon Kuester</h1>
             <p className="hero-subtitle">IT Support Specialist & Cybersecurity Analyst</p>
             <p className="hero-description">
-              I'm an IT Support Specialist who keeps systems running and people productive. I fix issues quickly, simplify setups, and shore up security so you spend less time waiting and more time doing.
+              Welcome to my personal website! I am a enthusiasist of anything and everything related to computers and technology. Check out some of my latest projects or learn more about me!
             </p>
             <div className="cta-buttons">
               <Link to="/projects" className="btn btn-primary">My Projects</Link>

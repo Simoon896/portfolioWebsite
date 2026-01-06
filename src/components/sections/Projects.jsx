@@ -10,9 +10,9 @@ function Projects() {
   const [projects] = useState([
     {
       id: 4,
-      title: "Cyber Capstone",
-      description: "A hands-on cybersecurity capstone showcasing intrusion detection, vulnerability assessment, and incident response workflows.",
-      tech: ["Python", "Wireshark", "Splunk", "Kali Linux", "Metasploit"],
+      title: "Capstone Project : Design of a Segmented Enterprise Network",
+      description: "A hands-on cybersecurity capstone project in which I designed and implemented a segmented enterprise network using a variety of interesting tools and technologies.",
+      tech: ["Active Directory", "Windows Server", "pfSense", "Kali Linux", "Wazuh", "Powershell"],
       githubLink: "#",
       demoLink: "/cybercapstoneproject",
       youtubeId: "Z03sj1094u4",
@@ -30,7 +30,7 @@ function Projects() {
     {
       id: 2,
       title: "LinkSniffer",
-      description: "A Google Chrome extension that automatically refreshes a page and detects new links, useful for monitoring updates.",
+      description: "A Google Chrome extension that automatically refreshes a page and detects new links, useful for monitoring website updates.",
       tech: ["JavaScript", "HTML", "CSS", "Chrome API"],
       githubLink: "https://github.com/Simoon896/LinkSniffer",
       demoLink: "/linksniffer-project-details",
@@ -39,7 +39,7 @@ function Projects() {
     {
       id: 3,
       title: "Catalogr",
-      description: "A comprehensive inventory management application designed to help you keep track of your personal belongings.",
+      description: "A comprehensive inventory management application designed to help you keep track of your personal belongings. Created during my Mobile Application Development class.",
       tech: ["React Native", "TypeScript", "Expo Go", "SQLite", "Appwrite", "Formspree"],
       githubLink: "https://github.com/Simoon896/Exam2MAD",
       demoLink: "/catalogr-project-details",
@@ -52,7 +52,7 @@ function Projects() {
       <div className="container">
         <div className="section-header text-center mb-5">
           <h2>My Projects</h2>
-          <p className="section-subtitle">A selection of my recent work and personal projects.</p>
+          <p className="section-subtitle">A few of my favorite projects that I have worked on recently!</p>
         </div>
 
         <div className="projects-grid">
@@ -75,7 +75,7 @@ function Projects() {
                 )}
               </div>
               <div className="project-content">
-                {(project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr" || project.title === "Cyber Capstone") ? (
+                {project.demoLink && project.demoLink.startsWith('/') ? (
                   <Link to={project.demoLink} className="project-title-link">
                     <h3>{project.title}</h3>
                   </Link>
@@ -91,13 +91,13 @@ function Projects() {
                 </div>
                 <div className="project-links">
                   {project.demoLink && project.demoLink !== "#" && (
-                    (project.title === "simoon.dev" || project.title === "LinkSniffer" || project.title === "Catalogr" || project.title === "Cyber Capstone") ? (
+                    project.demoLink.startsWith('/') ? (
                       <Link to={project.demoLink} className="btn btn-sm btn-outline-primary">
                         <i className="fas fa-external-link-alt mr-1"></i> View Details
                       </Link>
                     ) : (
-                      <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-outline-primary">
-                        <i className="fas fa-external-link-alt mr-1"></i> Live Demo
+                      <a href={project.demoLink} className="btn btn-sm btn-outline-primary">
+                        <i className="fas fa-external-link-alt mr-1"></i> View Details
                       </a>
                     )
                   )}
