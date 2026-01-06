@@ -17,7 +17,7 @@ function CyberCapstoneProject() {
       </header>
 
       <section className="project-image-section">
-        <div className="video-wrapper">
+        <div className="video-wrapper video-detail-wrapper">
           <iframe
             className="project-video"
             src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}

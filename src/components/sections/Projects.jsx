@@ -60,7 +60,7 @@ function Projects() {
             <div className="project-card card" key={project.id}>
               <div className="project-image-container">
                 {project.youtubeId ? (
-                  <div className="video-wrapper">
+                  <div className="video-wrapper video-card-wrapper">
                     <iframe
                       className="project-video"
                       src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}`}

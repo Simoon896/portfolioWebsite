@@ -1,6 +1,5 @@
 import '../../styles/About.css';
 import { Link, useNavigate } from 'react-router-dom';
-import aboutSnap from '../../assets/aboutSnap.png';
 import aboutSnap2 from '../../assets/aboutSnap2.jpg';
 
 function About() {
@@ -8,8 +7,8 @@ function About() {
   const skills = [
     { category: 'Certifications', items: ['CompTIA A+ (Aug 2025)', 'CompTIA Security+ (Expected Jan 2026)', 'Google Cybersecurity Professional Certificate (Sep 2023)'] },
     { category: 'Operating Systems & Networking', items: ['Windows 10/11', 'Windows Server', 'Linux', 'macOS', 'Active Directory', 'TCP/IP', 'DNS', 'DHCP'] },
-    { category: 'Support & Administration', items: ['User account management', 'Password resets', 'System troubleshooting', 'Documentation', 'Remote support'] },
-    { category: 'Security, Monitoring & Scripting', items: ['Wireshark', 'Snort', 'Wazuh', 'Splunk', 'Event Viewer', 'PowerShell', 'Bash', 'Python'] },
+    { category: 'Support & Administration', items: ['User Account Management', 'Password Resets', 'System Troubleshooting', 'Documentation', 'Remote Support'] },
+    { category: 'Security, Monitoring & Scripting', items: ['Wireshark', 'Snort', 'Wazuh', 'Event Viewer', 'PowerShell', 'Bash', 'Python'] },
   ];
 
   return (
@@ -17,7 +16,6 @@ function About() {
       <div className="container">
         <div className="section-header text-center mb-5">
           <h2>About Me</h2>
-          <p className="section-subtitle">Learn more about my background and skills.</p>
         </div>
         <div className="about-content">
           <div className="about-grid">
@@ -25,10 +23,10 @@ function About() {
               <div className="card p-4">
                 <h3>Who I Am</h3>
                 <div className="about-image-container">
-                  <img src={aboutSnap} alt="Profile" className="about-profile-image" />
+                  <img src={aboutSnap2} alt="Working on projects" className="about-profile-image" />
                 </div>
                 <p>
-                  I’m an <strong>IT Support Specialist / Help Desk Technician</strong> with a cybersecurity background. I enjoy taking messy, real-world problems—device issues, access blockers, network hiccups—and turning them into clear fixes and repeatable processes.
+                  Hello! My name is Simon, and I’m an IT Support Specialist with a cybersecurity background. I enjoy taking messy, real-world problems—device issues, access blockers, network hiccups—and turning them into clear fixes and repeatable processes.
                 </p>
                 <p>
                   My focus is reliable support: triaging quickly, troubleshooting methodically, and documenting solutions so teams stay productive and issues don’t come back.
@@ -38,10 +36,6 @@ function About() {
                 <p>
                   Through labs and hands-on projects, I’ve built experience with <strong>Windows/Linux administration</strong>, <strong>Active Directory hardening</strong>, and <strong>security monitoring</strong>. I like learning by building—setting up environments, breaking things safely, and then locking them down.
                 </p>
-
-                <div className="about-secondary-image">
-                  <img src={aboutSnap2} alt="Working on projects" className="about-work-image" />
-                </div>
 
                 <h4 className="mt-4 mb-2">Highlights</h4>
                 <ul className="about-highlights">
