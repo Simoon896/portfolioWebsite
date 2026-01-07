@@ -13,7 +13,7 @@ function PortfolioProjectDetails() {
         </Link>
         <header className="project-header">
           <h1>simoon.dev</h1>
-          <p className="project-subtitle">A showcase of my skills and projects.</p>
+          <p className="project-subtitle">The website you are currently on!</p>
         </header>
 
         <section className="project-image-section">
@@ -23,7 +23,7 @@ function PortfolioProjectDetails() {
         <section className="project-overview card-style-section">
           <h2>Overview</h2>
           <p>
-            This portfolio website is a React-based application designed to present my work and capabilities in a clean, modern, and accessible manner. It serves as a central hub for potential employers and collaborators to learn about my projects, skills, and experience.
+            This portfolio website is a React-based application designed to present my projects and capabilities in a clean, modern, and accessible manner. It serves as a central hub for potential employers and collaborators to learn about my projects, skills, and experience.
           </p>
         </section>
 
@@ -31,9 +31,10 @@ function PortfolioProjectDetails() {
           <h2>Key Features</h2>
           <ul>
             <li><strong>Responsive Design:</strong> Adapts to various screen sizes (desktops, tablets, and mobiles).</li>
-            <li><strong>Project Showcase:</strong> Dedicated sections for detailed project descriptions, including technologies used, live demos, and source code links.</li>
+            <li><strong>Project Showcase:</strong> Dedicated sections for detailed project descriptions, including technologies used, video demos, and source code links.</li>
             <li><strong>Interactive Elements:</strong> Smooth animations and transitions to enhance user experience.</li>
-            <li><strong>Skills Section:</strong> Highlights my technical proficiencies.</li>
+            <li><strong>About Section:</strong> A section that highlights my background and experience.</li>
+            <li><strong>Resume Section:</strong> A section that showcases my resume.</li>
             <li><strong>Contact Form:</strong> Easy way to get in touch.</li>
             <li><strong>Navigation:</strong> Clear and intuitive navigation using React Router.</li>
           </ul>
@@ -62,7 +63,7 @@ function PortfolioProjectDetails() {
         <section className="project-learnings card-style-section">
           <h2>What I Learned</h2>
           <p>
-            Building this portfolio enhanced my understanding of React, component-based architecture, and state management. I also gained more experience with responsive web design principles and modern CSS. The process of deploying the website provided valuable insights into build processes and hosting platforms.
+            Building this website enhanced my understanding of React, component-based architecture, and state management. I also gained more experience with responsive web design principles and modern CSS. The process of deploying the website provided valuable insights into build processes and hosting platforms.
           </p>
         </section>
 

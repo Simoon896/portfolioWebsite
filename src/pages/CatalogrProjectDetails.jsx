@@ -23,12 +23,12 @@ function CatalogrProjectDetails() {
         <section className="project-overview card-style-section">
           <h2>About Catalogr</h2>
           <p>
-            Catalogr is a comprehensive inventory management application designed to help you keep track of your personal belongings. Whether you're organizing your home items, collectibles, or important documents, Catalogr provides an easy-to-use interface for managing your possessions.
+            Catalogr is a comprehensive inventory management application designed to help people keep track of their personal belongings. Catalogr provides an easy-to-use interface for managing your possessions. I built this application during my Mobile Application Development class at the University of North Georgia.
           </p>
         </section>
 
         <section className="project-features card-style-section">
-          <h2>✨ Key Features</h2>
+          <h2>Key Features</h2>
           <ul>
             <li><strong>Item Management:</strong> Add, edit, and delete inventory items with detailed information.</li>
             <li><strong>Categorization:</strong> Organize items by category and location.</li>
@@ -48,14 +48,13 @@ function CatalogrProjectDetails() {
             <span className="tech-tag">SQLite</span>
             <span className="tech-tag">Expo</span>
             <span className="tech-tag">Appwrite</span>
-            {/* Add other relevant technologies if any */}
           </div>
         </section>
 
         <section className="project-challenges card-style-section">
           <h2>Challenges & Solutions</h2>
           <p>
-           PRODUCT CHALLENGES
+          One of the main challenges I faced was integrating the Appwrite database with the React Native application. Appwrite is a cloud-based backend-as-a-service (BaaS) platform that provides a RESTful API for building mobile and web applications. It was my first time working with a BaaS platform and it was a bit of a learning curve. I had to learn how to use the Appwrite API to interact with the database and how to store and retrieve data from the database.
           </p>
         </section>
 
@@ -68,7 +67,6 @@ function CatalogrProjectDetails() {
 
         <div className="project-links-detail">
           <a href="/projects" className="btn btn-outline-primary">Back to Projects</a>
-          {/* Replace # with actual GitHub link when available */}
           <a href="https://github.com/Simoon896/Exam2MAD" target="_blank" rel="noopener noreferrer" className="btn btn-outline-secondary">View Code on GitHub</a> 
         </div>
       </div>

@@ -25,7 +25,7 @@ function LinkSnifferProjectDetails() {
         <section className="project-overview card-style-section">
           <h2>Overview</h2>
           <p>
-            LinkSniffer is a Google Chrome extension designed to help users monitor web pages for new links. It automatically refreshes the target page at user-defined intervals and highlights any newly appeared hyperlinks, providing a notification or alert. This is particularly useful for tracking updates on dynamic content websites, forums, or announcement pages where new links signify important new information.
+            LinkSniffer is a Google Chrome extension I made while working as a Search Quality Rater at Welocalize. As a rater, I am responsible for managing my own time for each task given to me within the queue. To help me accurately track my time and check for new taks, I created this extension to automate the process. LinkSniffer automatically refreshes the target page at user-defined intervals and highlights any newly appeared hyperlinks, providing a notification or alert. 
           </p>
         </section>
 
@@ -34,6 +34,7 @@ function LinkSnifferProjectDetails() {
           <ul>
             <li><strong>Automatic Page Refresh:</strong> Configurable refresh intervals for monitoring.</li>
             <li><strong>New Link Detection:</strong> Intelligently identifies and highlights links that were not present on previous scans.</li>
+            <li><strong>Task Timer:</strong> A helpful task timer to help Raterhub users stay on track with their task time management.</li>
             <li><strong>User-Friendly Interface:</strong> Simple popup UI to control the extension and view results.</li>
             <li><strong>Notification System (Optional):</strong> Can be configured to provide desktop notifications for new links.</li>
             <li><strong>Lightweight & Efficient:</strong> Built to be non-intrusive and performant.</li>

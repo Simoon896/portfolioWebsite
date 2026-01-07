@@ -21,7 +21,7 @@ function Projects() {
     {
       id: 1,
       title: "simoon.dev",
-      description: "A React-based personal portfolio website to showcase my projects and skills. It features a modern design, smooth animations, and a responsive layout.",
+      description: "A React-based personal portfolio website to showcase my projects and skills. It features a modern design, smooth animations, and a responsive layout. The website is hosted on Vercel and the code is available on GitHub.",
       tech: ["React", "JavaScript", "HTML", "CSS", "React Router"],
       githubLink: "https://github.com/Simoon896/portfolioWebsite",
       demoLink: "/portfolio-project-details",
@@ -30,7 +30,7 @@ function Projects() {
     {
       id: 2,
       title: "LinkSniffer",
-      description: "A Google Chrome extension that automatically refreshes a page and detects new links, useful for monitoring website updates.",
+      description: "A Google Chrome extension that automatically refreshes a page and detects new links, useful for monitoring website updates. Also features a helpful task timer to help Raterhub users stay on track with their task time management.",
       tech: ["JavaScript", "HTML", "CSS", "Chrome API"],
       githubLink: "https://github.com/Simoon896/LinkSniffer",
       demoLink: "/linksniffer-project-details",
