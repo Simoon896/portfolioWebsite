@@ -52,7 +52,7 @@ function Projects() {
       <div className="container">
         <div className="section-header text-center mb-5">
           <h2>My Projects</h2>
-          <p className="section-subtitle">A few of my favorite projects that I have worked on recently!</p>
+          <p className="section-subtitle">A few of my favorite projects that I have worked on recently! Projects are continually being added weekly.</p>
         </div>
 
         <div className="projects-grid">
@@ -113,7 +113,7 @@ function Projects() {
         </div>
 
         <div className="text-center mt-5 projects-cta-container">
-          <button onClick={() => navigate('/contact')} className="btn btn-primary">Have a Project Idea? Get in Touch</button>
+          <button onClick={() => navigate('/contact')} className="btn btn-primary">Want to connect? Get in Touch</button>
         </div>
       </div>
     </section>

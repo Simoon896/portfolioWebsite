@@ -25,7 +25,7 @@ function LinkSnifferProjectDetails() {
         <section className="project-overview card-style-section">
           <h2>Overview</h2>
           <p>
-            LinkSniffer is a Google Chrome extension I made while working as a Search Quality Rater at Welocalize. As a rater, I am responsible for managing my own time for each task given to me within the queue. To help me accurately track my time and check for new taks, I created this extension to automate the process. LinkSniffer automatically refreshes the target page at user-defined intervals and highlights any newly appeared hyperlinks, providing a notification or alert. 
+            LinkSniffer is a Google Chrome extension I made while working as a Search Quality Rater at Welocalize. As a rater, I am responsible for managing my own time for each task given to me within the queue. To help me accurately track my time and check for new tasks, I created this extension to automate the process. LinkSniffer automatically refreshes the target page at user-defined intervals and highlights any newly appeared hyperlinks, providing a notification or alert. 
           </p>
         </section>
 
