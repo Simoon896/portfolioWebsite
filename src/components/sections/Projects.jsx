@@ -4,6 +4,7 @@ import '../../styles/Projects.css';
 import portfolioSnap from '../../assets/portfolioSnap.PNG';
 import linkSnifferSnap from '../../assets/linkSnifferSnap.PNG';
 import catalogrSnap from '../../assets/catalogrSnap.png';
+import nmapCard from '../../assets/nmap_card.png';
 
 function Projects() {
   const navigate = useNavigate();
@@ -17,6 +18,15 @@ function Projects() {
       demoLink: "/cybercapstoneproject",
       youtubeId: "Z03sj1094u4",
       image: null
+    },
+    {
+      id: 5,
+      title: "TCP Network Scanner",
+      description: "A lightweight Python TCP port scanner built in Applied Cybersecurity to quickly check exposure against known hosts.",
+      tech: ["Python", "Sockets", "CLI"],
+      githubLink: "https://github.com/Simoon896/Simple-TCP-Network-Scanner-",
+      demoLink: "/tcp-network-scanner",
+      image: nmapCard
     },
     {
       id: 1,

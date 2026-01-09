@@ -7,6 +7,7 @@ import PortfolioProjectDetails from './pages/PortfolioProjectDetails';
 import LinkSnifferProjectDetails from './pages/LinkSnifferProjectDetails';
 import CatalogrProjectDetails from './pages/CatalogrProjectDetails';
 import CyberCapstoneProject from './pages/CyberCapstoneProject';
+import TcpNetworkScannerProjectDetails from './pages/TcpNetworkScannerProjectDetails';
 import ResumePage from './pages/ResumePage';
 import './App.css';
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/linksniffer-project-details" element={<LinkSnifferProjectDetails />} />
         <Route path="/catalogr-project-details" element={<CatalogrProjectDetails />} />
         <Route path="/cybercapstoneproject" element={<CyberCapstoneProject />} />
+        <Route path="/tcp-network-scanner" element={<TcpNetworkScannerProjectDetails />} />
         <Route path="/resume" element={<ResumePage />} />
       </Routes>
     </Router>
