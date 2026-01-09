@@ -22,8 +22,8 @@ function Projects() {
     {
       id: 5,
       title: "TCP Network Scanner",
-      description: "A lightweight Python TCP port scanner built in Applied Cybersecurity to quickly check exposure against known hosts.",
-      tech: ["Python", "Sockets", "CLI"],
+      description: "A simple lightweight Python TCP port scanner built in a Applied Cybersecurity course to quickly check exposure against known hosts.",
+      tech: ["Python", "Sockets", "CLI", "Nmap", "TCP/IP Networking"],
       githubLink: "https://github.com/Simoon896/Simple-TCP-Network-Scanner-",
       demoLink: "/tcp-network-scanner",
       image: nmapCard
