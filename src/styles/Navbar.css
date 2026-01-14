@@ -1,7 +1,5 @@
 .navbar {
-  background-color: var(--card-background); /* Use card background for a clean look */
-  /* backdrop-filter: blur(8px); */ /* Removing blur for a cleaner, solid look, can be re-added if preferred */
-  /* -webkit-backdrop-filter: blur(8px); */
+  background-color: transparent; /* Transparent to match page background */
   height: 60px;
   display: flex;
   justify-content: center;
@@ -11,15 +9,14 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease, padding var(--transition-speed) ease; /* Added padding transition */
-  box-shadow: none; /* Initially no shadow, shadow on scroll */
-  padding: 0.5rem 0; /* Initial padding */
+  transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-bottom var(--transition-speed) ease;
+  box-shadow: none;
+  border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
-  /* background-color: rgba(255, 255, 255, 0.95); */ /* Keep it solid */
-  box-shadow: var(--shadow); 
-  padding: 0.25rem 0; /* This padding is for the <nav> element itself, not the container */
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-container {

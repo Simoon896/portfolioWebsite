@@ -3,12 +3,14 @@
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', sans-serif; /* Ensure consistent font */
+  background-color: var(--background-color);
 }
 
 .main-content {
   flex: 1 0 auto;
   padding-top: 60px; /* Adjust if navbar height changes, or use dynamic calculation */
   width: 100%; /* Let the container class in children handle max-width */
+  background-color: var(--background-color);
 }
 
 /* Removed .background-gradient as it's not part of the new design */ 
