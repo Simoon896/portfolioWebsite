@@ -1,12 +1,12 @@
 /* General Styling for Project Detail Pages */
 .project-details-container {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 2rem auto;
-  padding: 2rem;
-  background-color: var(--background-color, #f4f7f6);
-  color: var(--text-color, #333);
+  padding: 2.25rem;
+  background-color: #ffffff;
+  color: #0f172a;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;
   position: relative;
@@ -19,9 +19,10 @@
   z-index: 10;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
-  background-color: #1f2937;
-  border: 2px solid #1f2937;
+  background-color: #0f172a;
+  border: 1px solid #0f172a;
   color: #fff;
+  border-radius: 999px;
 }
 
 .back-button:hover,
@@ -29,13 +30,11 @@
   background-color: #111827;
   border-color: #111827;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.25);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .back-button:active {
   transform: translateY(0);
-  box-shadow: none;
 }
 
 .back-button i {
@@ -50,23 +49,25 @@
 
 .project-header {
   text-align: center;
-  margin-bottom: 2rem;
-  padding-top: 2.5rem; /* ensure content clears the absolute back button */
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  margin-bottom: 1.9rem;
+  padding-top: 3rem; /* ensure content clears the absolute back button */
+  padding-bottom: 0.5rem;
 }
 
 .project-header h1 {
-  font-size: 3rem;
-  color: var(--primary-color, #007bff);
-  margin-bottom: 0.75rem;
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  color: #0f172a;
+  margin-bottom: 0.4rem;
   font-weight: 700;
+  line-height: 1.15;
 }
 
 .project-subtitle {
-  font-size: 1.3rem;
-  color: var(--secondary-text-color, #555);
-  font-style: italic;
+  font-size: 1.05rem;
+  color: #475569;
+  font-style: normal;
+  margin: 0 auto;
+  max-width: 720px;
 }
 
 .project-image-section {
@@ -75,7 +76,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
@@ -132,28 +133,26 @@
 }
 
 .project-details-container section h2 {
-  font-size: 2rem;
-  color: var(--primary-color, #007bff);
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 3px solid var(--primary-color-lighter, #b8daff);
-  display: inline-block;
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  color: #0f172a;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0;
 }
 
 .card-style-section {
-  background-color: var(--card-background, #ffffff);
-  padding: 1.8rem;
-  border-radius: 8px;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--border-color, #e0e0e0);
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  border: 1px solid #e5e7eb;
 }
 
 .project-details-container p,
 .project-details-container li {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text-color-darker, #444);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #334155;
 }
 
 .project-details-container ul {
@@ -171,14 +170,14 @@
   content: '\25CF';
   position: absolute;
   left: 0;
-  color: var(--primary-color, #007bff);
+  color: #0f172a;
   font-size: 0.8em;
   top: 0.35em;
 }
 
 .project-details-container li strong {
   font-weight: 600;
-  color: var(--primary-color-darker, #0056b3);
+  color: #0f172a;
 }
 
 .tech-icons {
@@ -189,13 +188,13 @@
 }
 
 .tech-tag {
-  background-color: var(--primary-color-bg, #e7f3ff);
-  color: var(--primary-color-darker, #0056b3);
-  padding: 0.5em 1em;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  padding: 0.45em 0.9em;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid var(--primary-color-lighter, #b8daff);
+  border: 1px solid #e2e8f0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -208,9 +207,9 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border-color, #e0e0e0);
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
 }
 
 .project-links-detail .btn {
@@ -224,29 +223,30 @@
 }
 
 .btn-outline-primary {
-  color: var(--primary-color, #007bff);
-  border: 2px solid var(--primary-color, #007bff);
+  color: #0f172a;
+  border: 2px solid #0f172a;
   background-color: transparent;
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--primary-color, #007bff);
+  background-color: #0f172a;
   color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.16);
 }
 
 .btn-outline-secondary {
-  color: var(--secondary-text-color, #6c757d);
-  border: 2px solid var(--secondary-text-color, #6c757d);
-  background-color: transparent;
+  color: #475569;
+  border: 2px solid #e2e8f0;
+  background-color: #f8fafc;
 }
 
 .btn-outline-secondary:hover {
-  background-color: var(--secondary-text-color, #6c757d);
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+  background-color: #e2e8f0;
+  border-color: #e2e8f0;
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
 }
 
 /* Resume page tweaks */

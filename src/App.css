@@ -32,19 +32,6 @@ section h2 {
   margin-bottom: 1.5rem;
   font-weight: 700;
   color: var(--text-color);
-  position: relative;
-  display: inline-block;
-}
-
-section h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 70px;
-  height: 4px;
-  background: var(--accent-color);
-  border-radius: 2px;
 }
 
 /* Animations */

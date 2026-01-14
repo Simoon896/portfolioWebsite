@@ -20,20 +20,8 @@
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 50px;
-  position: relative;
   color: var(--text-primary);
   font-family: 'Manrope', sans-serif;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  width: 70px;
-  height: 3px;
-  background: linear-gradient(to right, var(--accent-color), transparent);
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .contact-content-grid {
@@ -48,7 +36,14 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  /* General card styles are inherited */
+  /* Disable hover animations */
+  transition: none;
+}
+
+.contact-info.card:hover,
+.contact-form-container.card:hover {
+  transform: none;
+  box-shadow: var(--shadow);
 }
 
 /* Specifically target the Get In Touch card for reduced vertical padding */
@@ -98,12 +93,10 @@
 .social-links-contact a {
   color: var(--secondary-darker);
   font-size: 1.6rem;
-  transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
 .social-links-contact a:hover {
   color: var(--accent-color);
-  transform: scale(1.1) translateY(-2px);
 }
 
 /* Form styles */
@@ -121,7 +114,6 @@
 .contact-form input,
 .contact-form textarea {
   padding: 0.7rem 0.9rem;
-  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 .contact-form textarea {
