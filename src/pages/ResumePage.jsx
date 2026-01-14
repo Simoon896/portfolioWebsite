@@ -6,7 +6,6 @@ import '../styles/ProjectDetails.css';
 function ResumePage() {
   const resumeDocx = `${window.location.origin}/resume.docx`;
   const resumePdf = `${window.location.origin}/resume.pdf`;
-  const resumeImage = `${window.location.origin}/resumeimage.png`;
 
   return (
     <Layout>
@@ -35,16 +34,6 @@ function ResumePage() {
           </div>
         </header>
 
-        <section className="project-image-section resume-preview">
-          <div className="resume-preview-card">
-            <img
-              src={resumeImage}
-              alt="Resume preview"
-              className="resume-image"
-              onError={(e) => { e.currentTarget.style.display = 'none'; }}
-            />
-          </div>
-        </section>
       </div>
     </Layout>
   );

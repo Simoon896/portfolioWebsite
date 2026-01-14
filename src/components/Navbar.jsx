@@ -97,13 +97,7 @@ function Navbar() {
             }}>Home</Link>
           </li> */}
           <li className="nav-item">
-            <Link to="/about" className="nav-link" onClick={(e) => navigateToPage(e, '/about')}>About</Link>
-          </li>
-          <li className="nav-item">
             <Link to="/projects" className="nav-link" onClick={(e) => navigateToPage(e, '/projects')}>Projects</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/resume" className="nav-link" onClick={(e) => navigateToPage(e, '/resume')}>Resume</Link>
           </li>
           <li className="nav-item">
             <Link to="/contact" className="nav-link" onClick={(e) => navigateToPage(e, '/contact')}>Contact</Link>

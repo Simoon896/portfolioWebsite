@@ -4,6 +4,7 @@ import headshot from '../../assets/head.JPEG';
 
 function Home() {
   const navigate = useNavigate();
+  const resumePdf = `${window.location.origin}/resume.pdf`;
 
   return (
     <section id="home" className="home-section">
@@ -18,8 +19,7 @@ function Home() {
             </p>
             <div className="cta-buttons">
               <Link to="/projects" className="btn btn-primary">My Projects</Link>
-              <button onClick={() => navigate('/about')} className="btn btn-secondary">About Me</button>
-            <button onClick={() => navigate('/resume')} className="btn btn-secondary">Resume</button>
+              <a href={resumePdf} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Resume</a>
               <button onClick={() => navigate('/contact')} className="btn btn-secondary">Contact Me</button>
             </div>
           </div>
