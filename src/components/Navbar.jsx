@@ -76,33 +76,23 @@ function Navbar() {
         >
           simoon.dev
         </Link>
-        <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <div className="menu-icon-bar"></div>
-          <div className="menu-icon-bar"></div>
-          <div className="menu-icon-bar"></div>
-        </div>
-        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          {/* <li className="nav-item">
-            <Link to="/" className="nav-link" onClick={(e) => {
-              if (location.pathname === '/') {
-                e.preventDefault();
-                scrollToSection('home');
-              } else {
-                // Allow default link behavior to navigate to home then scroll
-                // The scrollToSection logic will handle it after navigation
-                // Or, we can navigate and then scroll in a more controlled way if needed
-                 navigate('/');
-                 setTimeout(() => scrollToSection('home'), 100);
-              }
-            }}>Home</Link>
-          </li> */}
-          <li className="nav-item">
-            <Link to="/projects" className="nav-link" onClick={(e) => navigateToPage(e, '/projects')}>Projects</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contact" className="nav-link" onClick={(e) => navigateToPage(e, '/contact')}>Contact</Link>
-          </li>
-        </ul>
+        {location.pathname !== '/' && (
+          <>
+            <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+              <div className="menu-icon-bar"></div>
+              <div className="menu-icon-bar"></div>
+              <div className="menu-icon-bar"></div>
+            </div>
+            <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+              <li className="nav-item">
+                <Link to="/projects" className="nav-link" onClick={(e) => navigateToPage(e, '/projects')}>Projects</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/contact" className="nav-link" onClick={(e) => navigateToPage(e, '/contact')}>Contact</Link>
+              </li>
+            </ul>
+          </>
+        )}
       </div>
     </nav>
   );
