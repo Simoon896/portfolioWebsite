@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
@@ -36,6 +37,7 @@ function App() {
         <Route path="/cybercapstoneproject" element={<CyberCapstoneProject />} />
         <Route path="/tcp-network-scanner" element={<TcpNetworkScannerProjectDetails />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
